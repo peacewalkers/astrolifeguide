@@ -74,7 +74,7 @@
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 @role('admin')
-                                <a class="dropdown-item " href="/dashboard">
+                                <a class="dropdown-item " href="/horoscopes">
                                     {!! trans('titles.dashboard') !!}
                                 </a>
                                 <div class="dropdown-divider"></div>
