@@ -97,7 +97,7 @@
                         <!--Horoscope Form-->
                         <form class="card" action="/horoscope" enctype="multipart/form-data" method="post" style="width: 100%;">
                             <?php echo csrf_field(); ?>
-                            <h3 class="my-3  py-2 text-uppercase" style="background-color:#fff200;"> Child Report</h3>
+                            <h3 class="my-3  py-2 text-uppercase" style="background-color:#f05f1e;"> Child Report</h3>
                             <input type="hidden" name="reptype" value="child">
 
                             <div class="card-body mx-4">
@@ -183,6 +183,8 @@
 
 
                                 <div class="col-sm-10 text-center formbutton">
+                                    <p class="  my-2"> Detailed Report :  1200/-</p>
+
                                     <button type="submit"  name="submit" data-amount="1000"  class="btn text-white btn-md">Submit Details</button>
                                 </div>
                             </div>

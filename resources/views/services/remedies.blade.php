@@ -185,6 +185,8 @@
 
 
                                 <div class="col-sm-10 text-center formbutton">
+                                    <p class="  my-2"> Detailed Report :  1200/-</p>
+
                                     <button type="submit"  name="submit" data-amount="1000"  class="btn text-white btn-md">Submit Details</button>
                                 </div>
                             </div>

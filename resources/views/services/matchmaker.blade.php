@@ -300,6 +300,8 @@
                             <label style="display:none;"    for="refdetails">Referred By Details</label>
                         </div>
                         <div class="col-sm-10 container text-center formbutton">
+                            <p class="  my-2"> Detailed Report :  2500/-</p>
+
                             <button type="submit"  name="submit" data-amount="1000"  class="btn text-white btn-md">Place Order</button>
                         </div>
 
