@@ -321,7 +321,7 @@
 
                         <!--Card image-->
                         <div class="view overlay my-5">
-                            <img src="{{ asset('astrolifeguide') }}/img/services/matrimony.png" class="mx-auto card-img-top"
+                            <img src="{{ asset('astrolifeguide') }}/img/services/birthstar.jpg" style="padding:0; margin-top: 35%;" width="250" class="mx-auto card-img-top"
                                  alt="">
                             <a href="http://birthstarmatrimony.com/" target="_blank">
                                 <div class="mask rgba-white-slight"></div>

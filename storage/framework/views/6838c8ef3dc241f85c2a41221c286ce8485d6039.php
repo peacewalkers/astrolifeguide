@@ -75,7 +75,7 @@
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <?php if (Auth::check() && Auth::user()->hasRole('admin')): ?>
-                                <a class="dropdown-item " href="/dashboard">
+                                <a class="dropdown-item " href="/horoscopes">
                                     <?php echo trans('titles.dashboard'); ?>
 
                                 </a>

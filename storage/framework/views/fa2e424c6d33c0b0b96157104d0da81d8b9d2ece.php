@@ -15,7 +15,7 @@
                     <!--Horoscope Form-->
                     <form class="card" action="/matchmaker" enctype="multipart/form-data" method="post" style="width: 100%;">
                         <?php echo csrf_field(); ?>
-                        <h3 class="my-3  py-2 text-uppercase" style="background-color:#fff200;"> Compatibility Report</h3>
+                        <h3 class="my-3  py-2 text-uppercase" style="background-color:#f05f1e;"> Compatibility Report</h3>
                         <input type="hidden" name="reptype" value="Compatibility">
                         <div class="row container">
                             <div class="card-body mx-3 col-md-6 ">
@@ -298,6 +298,8 @@
                             <label style="display:none;"    for="refdetails">Referred By Details</label>
                         </div>
                         <div class="col-sm-10 container text-center formbutton">
+                            <p class="  my-2"> Detailed Report :  2500/-</p>
+
                             <button type="submit"  name="submit" data-amount="1000"  class="btn text-white btn-md">Place Order</button>
                         </div>
 
@@ -317,7 +319,7 @@
 
                         <!--Card image-->
                         <div class="view overlay my-5">
-                            <img src="<?php echo e(asset('astrolifeguide')); ?>/img/services/matrimony.png" class="mx-auto card-img-top"
+                            <img src="<?php echo e(asset('astrolifeguide')); ?>/img/services/birthstar.jpg" style="padding:0; margin-top: 35%;" width="250" class="mx-auto card-img-top"
                                  alt="">
                             <a href="http://birthstarmatrimony.com/" target="_blank">
                                 <div class="mask rgba-white-slight"></div>
