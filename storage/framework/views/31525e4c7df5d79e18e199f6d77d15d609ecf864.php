@@ -51,8 +51,8 @@
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
                 <!-- Content -->
-                <h6 class="text-uppercase font-weight-bold">About Astrolifeguide</h6>
-                <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #038C01" >
+                <h6 class="text-uppercase font-weight-bold" style="color: #038C01 ">About Astrolifeguide</h6>
+                <hr class="  mb-4 mt-0 d-inline-block mx-auto"  >
                 <p>Our mission is to provide premium vedic astrology consultation services to our clients at economical prices. We strongly believe in providing accurate remidial solutions.</p>
 
             </div>
@@ -62,8 +62,8 @@
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
                 <!-- Links -->
-                <h6 class="text-uppercase font-weight-bold">Resources</h6>
-                <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #038C01">
+                <h6 class="text-uppercase font-weight-bold" style="color: #038C01 ">Resources</h6>
+                <hr class=" mb-4 mt-0 d-inline-block mx-auto" >
                 <p class="py-1" style="border-bottom: 1px solid #989c98">
                     <a class="text-dark" href="/privacypolicy">Privacy Policy</a>
                 </p>
@@ -81,8 +81,8 @@
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
                 <!-- Links -->
-                <h6 class="text-uppercase font-weight-bold">Helpful links</h6>
-                <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #038C01 ">
+                <h6 class="text-uppercase font-weight-bold" style="color: #038C01 ">Helpful links</h6>
+                <hr class=" mb-4 mt-0 d-inline-block mx-auto" >
                 <p class="py-1" style="border-bottom: 1px solid #989c98">
                     <a class="text-dark" href="#!">Our Services</a>
                 </p>
@@ -100,8 +100,8 @@
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
                 <!-- Links -->
-                <h6 class="text-uppercase font-weight-bold">Contact</h6>
-                <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #038C01">
+                <h6 class="text-uppercase font-weight-bold" style="color: #038C01 ">Contact</h6>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" >
                 <p class="py-1">
 
                     <i class="fas fa-home mr-3"></i> Jyothi Square, Banjara Hills<br>
