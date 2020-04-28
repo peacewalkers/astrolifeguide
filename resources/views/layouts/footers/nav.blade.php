@@ -155,8 +155,8 @@
                 <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #038C01">
                 <p class="py-1">
 
-                <i class="fas fa-home mr-3"></i> Jyothi Square, Banjara Hills,
-                    <span class="pl-5"> Hyderabad, IN </span><br>
+                    <i class="fas fa-home mr-3"></i> Jyothi Square, Banjara Hills<br>
+                    <span style="padding-left: 35px;"> Hyderabad, IN </span><br>
 
                     <i class="fas fa-envelope mr-3"></i> info@astrolifeguide.com<br>
 
