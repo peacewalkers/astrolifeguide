@@ -5,7 +5,7 @@ return [
     'app'               => 'Laravel',
     'app2'              => 'Auth :version',
     'home'              => 'Home',
-    'login'             => 'Login',
+    'login'             => 'LOGIN',
     'logout'            => 'Logout',
     'register'          => 'Register',
     'resetPword'        => 'Reset Password',

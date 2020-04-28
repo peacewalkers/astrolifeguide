@@ -873,9 +873,9 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="testimonial_slider_content">
-                                                <img src="{{ asset('astrolifeguide') }}/img/content/testi_client_img1.jpeg" style="margin-top: -60px;" class="py-2 img-responsive" alt="section3_t2__img">
-                                                <h5>Vinay And Ramya</h5>
-                                                <small>IT Professionals</small>
+                                                <img src="{{ asset('astrolifeguide') }}/img/content/testi_client_img1.jpeg" style="margin-top: -60px;" class="img-responsive" alt="section3_t2__img">
+                                                <h5>Mr & Mrs Sai</h5>
+                                                <small>Healthcare Professionals</small>
                                                 <h4><span>&nbsp;</span></h4>
                                                 <i>"We are thankful to Astrolifeguide for bringing us together".
 

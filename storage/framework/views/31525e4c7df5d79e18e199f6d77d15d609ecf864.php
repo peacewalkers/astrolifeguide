@@ -52,6 +52,7 @@
 
                 <!-- Content -->
                 <h6 class="text-uppercase font-weight-bold">About Astrolifeguide</h6>
+                <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #038C01" >
                 <p>Our mission is to provide premium vedic astrology consultation services to our clients at economical prices. We strongly believe in providing accurate remidial solutions.</p>
 
             </div>
@@ -62,6 +63,7 @@
 
                 <!-- Links -->
                 <h6 class="text-uppercase font-weight-bold">Resources</h6>
+                <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #038C01">
                 <p class="py-1" style="border-bottom: 1px solid #989c98">
                     <a class="text-dark" href="/privacypolicy">Privacy Policy</a>
                 </p>
@@ -80,6 +82,7 @@
 
                 <!-- Links -->
                 <h6 class="text-uppercase font-weight-bold">Helpful links</h6>
+                <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #038C01 ">
                 <p class="py-1" style="border-bottom: 1px solid #989c98">
                     <a class="text-dark" href="#!">Our Services</a>
                 </p>
@@ -98,13 +101,15 @@
 
                 <!-- Links -->
                 <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #038C01">
                 <p class="py-1">
 
-                <i class="fas fa-home mr-3"></i> Jyothi Square, Banjara Hills, Hyderabad, IN<br>
+                <i class="fas fa-home mr-3"></i> Jyothi Square, Banjara Hills,
+                    <span class="pl-5"> Hyderabad, IN </span><br>
 
                     <i class="fas fa-envelope mr-3"></i> info@astrolifeguide.com<br>
 
-                    <i class="fas fa-phone mr-3"></i> + 91 93932 55299</p><br>
+                    <i class="fas fa-phone mr-3"></i> + 91 93932 55299 </p><br>
 
             </div>
             <!-- Grid column -->

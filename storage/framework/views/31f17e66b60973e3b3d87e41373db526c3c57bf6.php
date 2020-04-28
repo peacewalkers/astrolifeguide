@@ -2,7 +2,7 @@
 
 
     <!--Main layout-->
-    <div class="container mt-5 pb-5 page-content">
+    <div class="container pb-5 page-content">
         <!--Section: Cards-->
             <section class="text-center ">
 
@@ -27,10 +27,10 @@
                             <!--Card content-->
                             <div class="card-body  px-1 py-0">
                                 <!--Title-->
-                                <a href="#">
-                                <div style="font-size: 18px;" class="card-title">Career Report</div>
-                                <!--Text-->
-                                <p class="card-text"> The Career Prediction and remedies are given on the basis of accurate horoscope birth chart reading.  </p>
+                                <a href="/services/career">
+                                    <div style="font-size: 18px;" class="card-title">Career Report</div>
+                                    <!--Text-->
+                                    <p class="card-text"> The Career Prediction and remedies are given on the basis of accurate horoscope birth chart reading.  </p>
                                 </a>
                             </div>
 
@@ -53,7 +53,7 @@
                             <!--Card content-->
                             <div class="card-body px-1 py-0">
                                 <!--Title-->
-                                <a href="#">
+                                <a href="/services/marriage">
                                     <div style="font-size: 18px;" class="card-title">Marriage Report</div>
                                     <!--Text-->
                                     <p class="card-text"> Get your marriage predictions and appropriate time for marriage according to your horoscope.  </p>
@@ -78,7 +78,7 @@
                             <!--Card content-->
                             <div class="card-body px-0 py-1">
                                 <!--Title-->
-                                <a href="#">
+                                <a href="/services/child">
                                     <div style="font-size: 18px;" class="card-title">Child Report</div>
                                     <!--Text-->
                                     <p class="card-text  px-1 py-0"> The Career Prediction and remedies are given on the basis of accurate horoscope birth chart reading.  </p>
@@ -97,7 +97,7 @@
                         <!--Horoscope Form-->
                         <form class="card" action="/horoscope" enctype="multipart/form-data" method="post" style="width: 100%;">
                             <?php echo csrf_field(); ?>
-                            <h3 class="my-3  py-2 text-uppercase" style="background-color:#f05f1e;"> Detailed Horoscope Report</h3>
+                            <h5 class="my-3 text-white py-2 text-uppercase" style="background-color:#f05f1e;"> Detailed Horoscope Report</h5>
                             <input type="hidden" name="reptype" value="horoscope">
 
                             <div class="card-body mx-4">
@@ -182,8 +182,10 @@
                                 </div>
 
 
-                                <div class="col-sm-10 text-center formbutton">
-                                    <button type="submit"  name="submit" data-amount="1000"  class="btn text-white btn-md">Submit Details</button>
+                                <div class="col-sm-12 mt-4 text-center formbutton">
+                                    <p class="  my-2"> Detailed Report :  1200/-</p>
+
+                                    <button type="submit"  name="submit" data-amount="1000"  class="mt-4  btn text-white btn-md">Submit Details</button>
                                 </div>
                             </div>
                         </form>
@@ -235,7 +237,7 @@
                             <!--Card content-->
                             <div class="card-body px-0 py-1">
                                 <!--Title-->
-                                <a href="#">
+                                <a href="/services/matchmaker">
                                     <div style="font-size: 18px;" class="card-title">Compatibility Report</div>
                                     <!--Text-->
                                     <p class="card-text"> The Career Prediction and remedies are given on the basis of accurate horoscope birth chart reading.  </p>
@@ -260,7 +262,7 @@
                             <!--Card content-->
                             <div class="card-body px-0 py-1">
                                 <!--Title-->
-                                <a href="#">
+                                <a href="/services/sadesati">
                                     <div style="font-size: 18px;" class="card-title">Sadesati Report</div>
                                     <!--Text-->
                                     <p class="card-text"> The Career Prediction and remedies are given on the basis of accurate horoscope birth chart reading.  </p>

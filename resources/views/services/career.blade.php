@@ -4,7 +4,7 @@
 
 
     <!--Main layout-->
-    <div class="container mt-5 pb-5 page-content">
+    <div class="container pb-5 page-content">
         <!--Section: Cards-->
             <section class="text-center ">
 
@@ -19,7 +19,7 @@
 
                             <!--Card image-->
                             <div class="view overlay">
-                                <img src="{{ asset('astrolifeguide') }}/img/services/Career.png" style="width:40%;" class="mx-auto card-img-top"
+                                <img src="{{ asset('astrolifeguide') }}/img/services/vastu.jpg" style="width:40%;" class="mx-auto card-img-top"
                                      alt="">
                                 <a href="/services/career" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
@@ -30,9 +30,9 @@
                             <div class="card-body  px-1 py-0">
                                 <!--Title-->
                                 <a href="#">
-                                <div style="font-size: 18px;" class="card-title">Career Report</div>
+                                <div style="font-size: 18px;" class="card-title">Remedies Report</div>
                                 <!--Text-->
-                                <p class="card-text"> The Career Prediction and remedies are given on the basis of accurate horoscope birth chart reading.  </p>
+                                <p class="card-text"> The remedies are given on the basis of accurate horoscope birth chart reading.  </p>
                                 </a>
                             </div>
 
@@ -99,8 +99,8 @@
                         <!--Horoscope Form-->
                         <form class="card" action="/horoscope" enctype="multipart/form-data" method="post" style="width: 100%;">
                             @csrf
-                            <h3 class="my-3  py-2 text-uppercase" style="background-color:#f05f1e;"> Career Report</h3>
-                            <input type="hidden" name="reptype" value="career">
+                            <h5 class="my-3  py-2 text-uppercase text-white" style="background-color:#f05f1e;"> Career Report</h5>
+                            <input type="hidden" name="reptype" value="Career">
 
                             <div class="card-body mx-4">
                                 <!--Body-->
@@ -179,10 +179,10 @@
                                 </div>
 
 
-                                <div class="col-sm-10 text-center formbutton">
+                                <div class="col-sm-12 mx-auto mt-4 text-center formbutton">
                                     <p class="  my-2"> Detailed Report :  1200/-</p>
 
-                                    <button type="submit"  name="submit" data-amount="1000"  class="btn text-white btn-md">Submit Details</button>
+                                    <button type="submit"  name="submit" data-amount="1000"  class="btn mt-4  text-white btn-md">Submit Details</button>
                                 </div>
                             </div>
                         </form>

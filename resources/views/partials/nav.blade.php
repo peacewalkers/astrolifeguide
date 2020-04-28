@@ -39,21 +39,21 @@
             <nav class="hs_main_menu">
                 <ul class="menubuttons">
                     <li>
-                    <li><a class="menu-button" href="/">Home</a></li>
+                    <li><a class="menu-button" href="/">HOME</a></li>
 
                     <li>
-                        <a class="menu-button" href="#about">About Us</a>
+                        <a class="menu-button" href="#about">ABOUT US</a>
                     </li>
 
-                    <li class="dropdown menu-button">
-                        <a class="menu-button" href="#services">Services</a>
+                    <li >
+                        <a class="menu-button" href="#services">SERVICES</a>
                     </li>
 
-                    <li class="dropdown menu-button">
-                        <a class="menu-button" href="#">Blog </a>
+                    <li >
+                        <a class="menu-button" href="#">BLOG</a>
                     </li>
                     <li>
-                        <a class="menu-button" href="/contact">Contact </a>
+                        <a class="menu-button" href="/contact">CONTACT </a>
                     </li>
 
                     @guest
@@ -166,21 +166,12 @@
                         <a href="#" class="cd-close">Close</a>
                         <ul class="cd-dropdown-content">
 
-                            <li><a href="/">Home</a></li>
-                            <li><a href="#about">About US</a></li>
+                            <li><a href="/">HOME</a></li>
 
-                            <!-- .has-children -->
-                            <li class="has-children">
-                                <a href="#services">Services</a>
-                            </li>
-                            <!-- .has-children -->
-                            <li class="has-children">
-                                <a href="#">Blog</a>
-                            </li>
-                            <!-- .has-children -->
-                            <li>
-                                <a href="/contact">Contact</a>
-                            </li>
+                            <li><a href="#services">SERVICES</a></li>
+                            <li><a href="#">BLOG</a></li>
+                            <li><a href="#about">ABOUT US</a></li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
                         <!-- .cd-dropdown-content -->
                     </nav>

@@ -245,7 +245,7 @@ body, html {
 }
 /*---------- btn Css End -------*/
 a {
-    color: #797979;
+    color: #000;
     text-decoration: none;
 }
 a:hover, a:focus {
@@ -1991,6 +1991,7 @@ ul{
 .hs_testi_slider_main_wrapper .owl-carousel .owl-item img {
     display:inline-block;
     width: 100px;
+    height:100px;
     border-radius: 100%;
 /*    border: 4px solid #038C01;*/
     margin-top: -15%;
@@ -7385,7 +7386,7 @@ section.modalWindow section.modalWrapper {
 
 @media (max-width: 812px) {
     .page-content {
-        padding-top:50px;
+        padding-top:0px;
     }
 }
 

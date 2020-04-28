@@ -2,7 +2,7 @@
 
 
     <!--Main layout-->
-    <div class="container mt-5 pb-5 page-content">
+    <div class="container pb-5 page-content">
         <!--Section: Cards-->
         <section class="text-center ">
 
@@ -15,7 +15,7 @@
                     <!--Horoscope Form-->
                     <form class="card" action="/matchmaker" enctype="multipart/form-data" method="post" style="width: 100%;">
                         <?php echo csrf_field(); ?>
-                        <h3 class="my-3  py-2 text-uppercase" style="background-color:#f05f1e;"> Compatibility Report</h3>
+                        <h5 class="my-3  py-2 text-uppercase text-white" style="background-color:#f05f1e;"> Compatibility Report</h5>
                         <input type="hidden" name="reptype" value="Compatibility">
                         <div class="row container">
                             <div class="card-body mx-3 col-md-6 ">
@@ -115,6 +115,7 @@
                                         <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1"
                                              data-parent="#accordionEx7">
                                             <div class="card-body mb-1">
+
                                                 <div class="row">
                                                     <div class="md-form col form-group<?php echo e($errors->has('nameone') ? ' has-danger' : ''); ?>">
                                                         <input type="text" id="Form-name" name="nameone" class="form-control<?php echo e($errors->has('nameone') ? ' is-invalid' : ''); ?>"  value="<?php echo e(old('nameone')); ?>" required>
@@ -135,30 +136,28 @@
                                                 </div>
 
                                                 <div class="row">
-                                                <div class="md-form col">
-                                                    <input type="text" id="tobone" name="tobone" class="form-control timepicker" required>
-                                                    <label for="tobone">Time Of Birth</label>
+                                                    <div class="md-form col">
+                                                        <input type="text" id="tobone" name="tobone" class="form-control timepicker" required>
+                                                        <label for="tobone">Time Of Birth</label>
+                                                    </div>
                                                 </div>
 
+                                                <div class="row">
+                                                    <div class="md-form col">
+                                                        <input type="text" id="pobone" name="pobone" class="form-control" required>
+                                                        <label for="pobone">City Of Birth</label>
+                                                    </div>
                                                 </div>
-
-                                                        <div class="row">
-                                                <div class="md-form col">
-                                                    <input type="text" id="pobone" name="pobone" class="form-control" required>
-                                                    <label for="pobone">City Of Birth</label>
-                                                </div>
-                                                        </div>
-                                                            <div class="row">
-                                                <div class="md-form col">
-                                                    <input  type="text" id="cobone" name="cobone" class="form-control " required>
-                                                    <label for="cobone">Country Of Birth</label>
-                                                </div>
-                                                            </div>
+                                               <div class="row">
+                                                    <div class="md-form col">
+                                                        <input  type="text" id="cobone" name="cobone" class="form-control " required>
+                                                        <label for="cobone">Country Of Birth</label>
+                                                    </div>
+                                               </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                         </div>
                                     <!-- Accordion card -->
-
+                                    </div>
                                     <!-- Accordion card -->
                                     <div class="card">
 
@@ -176,6 +175,7 @@
                                         <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2"
                                              data-parent="#accordionEx7">
                                             <div class="card-body mb-1 ">
+
                                                 <div class="row">
                                                     <div class="md-form col">
                                                     <input type="text" id="nametwo" name="nametwo" class="form-control">
@@ -184,39 +184,39 @@
                                                 </div>
 
                                                 <div class="row">
-
-                                                <div class="md-form col">
-                                                    <input type="text" id="tobtwo" name="tobtwo" class="form-control timepicker">
-                                                    <label for="tobtwo">Time Of Birth</label>
+                                                    <div class="md-form col">
+                                                        <input type="text" id="tobtwo" name="tobtwo" class="form-control timepicker">
+                                                        <label for="tobtwo">Time Of Birth</label>
+                                                    </div>
                                                 </div>
+
+                                                <div class="row">
+                                                    <div class="md-form col">
+                                                        <input  type="text" id="dobtwo" name="dobtwo" class="form-control datepicker">
+                                                        <label for="dobtwo">Date Of Birth</label>
+                                                    </div>
                                                 </div>
 
                                                 <div class="row">
-
-                                                <div class="md-form col">
-                                                    <input  type="text" id="dobtwo" name="dobtwo" class="form-control datepicker">
-                                                    <label for="dobtwo">Date Of Birth</label>
-                                                </div> </div>
-
-                                                <div class="row">
-
-                                                <div class="md-form col">
-                                                    <input type="text" id="pobtwo" name="pobtwo" class="form-control">
-                                                    <label for="pobtwo">City Of Birth</label>
-                                                </div> </div>
+                                                    <div class="md-form col">
+                                                        <input type="text" id="pobtwo" name="pobtwo" class="form-control">
+                                                        <label for="pobtwo">City Of Birth</label>
+                                                    </div>
+                                                </div>
 
                                                 <div class="row">
-
-                                                <div class="md-form col">
-                                                    <input  type="text" id="cobtwo" name="cobtwo" class="form-control ">
-                                                    <label for="cobtwo">Country Of Birth</label>
-                                                </div> </div>
+                                                        <div class="md-form col">
+                                                            <input  type="text" id="cobtwo" name="cobtwo" class="form-control ">
+                                                            <label for="cobtwo">Country Of Birth</label>
+                                                        </div>
+                                                    </div>
 
                                                 <div class="row">
                                             </div>
                                         </div>
-                                    </div>
+                                        </div>
                                     <!-- Accordion card -->
+                                    </div>
 
                                     <!-- Accordion card -->
                                     <div class="card">
@@ -242,7 +242,7 @@
                                                     </div>
                                                 </div>
 
-                                            <div class="row">
+                                                <div class="row">
                                                 <div class="md-form col">
                                                     <input type="text" id="tobthree" name="tobthree" class="form-control timepicker">
                                                     <label for="tobthree">Time Of Birth</label>
@@ -250,30 +250,29 @@
                                             </div>
 
                                                 <div class="row">
-                                                <div class="md-form col">
-                                                    <input  type="text" id="dobthree" name="dobthree" class="form-control datepicker">
-                                                    <label for="dobthree">Date Of Birth</label>
-                                                </div>
-                                                </div>
-
-                                                <div class="row">
-                                                <div class="md-form col">
-                                                    <input type="text" id="pobthree" name="pobthree" class="form-control">
-                                                    <label for="pobthree">City Of Birth</label>
-                                                </div>
+                                                    <div class="md-form col">
+                                                        <input  type="text" id="dobthree" name="dobthree" class="form-control datepicker">
+                                                        <label for="dobthree">Date Of Birth</label>
+                                                    </div>
                                                 </div>
 
                                                 <div class="row">
-                                                <div class="md-form col">
-                                                    <input  type="text" id="cobthree" name="cobthree" class="form-control ">
-                                                    <label for="cobthree">Country Of Birth</label>
+                                                    <div class="md-form col">
+                                                        <input type="text" id="pobthree" name="pobthree" class="form-control">
+                                                        <label for="pobthree">City Of Birth</label>
+                                                    </div>
                                                 </div>
+
+                                                <div class="row">
+                                                    <div class="md-form col">
+                                                        <input  type="text" id="cobthree" name="cobthree" class="form-control ">
+                                                        <label for="cobthree">Country Of Birth</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- Accordion card -->
-                                </div>
                                 <!--/.Accordion wrapper-->
 
 
@@ -293,14 +292,15 @@
                             <option value="WOM">Friend Or Relative</option>
                         </select>
 
-                        <div class="md-form">
-                            <textarea id="refdetails" class="form-control md-textarea mx-auto" name="refdetails" id="refdetails" style="display:none; width: 80%;" length="50" rows="1"></textarea>
-                            <label style="display:none;"    for="refdetails">Referred By Details</label>
-                        </div>
-                        <div class="col-sm-10 container text-center formbutton">
-                            <p class="  my-2"> Detailed Report :  2500/-</p>
+                        <div class="md-form mx-auto" style="width: 80%;">
+                                <textarea id="refdetails" class="form-control md-textarea" name="refdetails" id="refdetails" style="display:none;" length="50" rows="1"></textarea>
+                                <label style="display:none;"    for="refdetails">Referred By Details</label>
+                            </div>
 
-                            <button type="submit"  name="submit" data-amount="1000"  class="btn text-white btn-md">Place Order</button>
+                        <div class="col-sm-12 container text-center formbutton">
+                            <p class=" my-2"> Detailed Report :  2500/-</p>
+
+                            <button type="submit"  name="submit" data-amount="1000"  class=" my-4  btn text-white btn-md">Place Order</button>
                         </div>
 
 
