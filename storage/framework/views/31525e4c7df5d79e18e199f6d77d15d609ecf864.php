@@ -1,7 +1,4 @@
 
-<!-- hs footer wrapper Start -->
-
-
 <!-- Footer -->
 <footer class="page-footer">
 
@@ -53,7 +50,7 @@
                 <!-- Content -->
                 <h6 class="text-uppercase font-weight-bold" style="color: #038C01 ">About Astrolifeguide</h6>
                 <hr class="  mb-4 mt-0 d-inline-block mx-auto"  >
-                <p>Our mission is to provide premium vedic astrology consultation services to our clients at economical prices. We strongly believe in providing accurate remidial solutions.</p>
+                <p>Our mission is to provide premium vedic astrology consultation services to our clients at economical prices. We strongly believe in providing accurate remedial solutions.</p>
 
             </div>
             <!-- Grid column -->

@@ -809,11 +809,13 @@ ul{
 .menu_fixed{
     position:fixed;
     background:#f05f1e;
-    -webkit-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.10);
-    -moz-box-shadow:  0px 1px 20px 0px rgba(0, 0, 0, 0.10);
-    -o-box-shadow:  0px 1px 20px 0px rgba(0, 0, 0, 0.10);
-    -ms-box-shadow:  0px 1px 20px 0px rgba(0, 0, 0, 0.10);
-    box-shadow:  0px 1px 20px 0px rgba(0, 0, 0, 0.10);
+    /*  -webkit-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.10);
+   -moz-box-shadow:  0px 1px 20px 0px rgba(0, 0, 0, 0.10);
+   -o-box-shadow:  0px 1px 20px 0px rgba(0, 0, 0, 0.10);
+   -ms-box-shadow:  0px 1px 20px 0px rgba(0, 0, 0, 0.10);
+
+   box-shadow:  0px 1px 20px 0px rgba(0, 0, 0, 0.10);
+   */
     z-index:1000;
     top:0;
     left:0;

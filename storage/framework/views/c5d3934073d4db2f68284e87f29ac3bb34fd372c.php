@@ -1,3 +1,8 @@
+<?php $__env->startSection('head'); ?>
+
+
+
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 
 
@@ -24,9 +29,20 @@
 
                             <p class="mb-3">We have received your details, Please allow us 24hours - 48hours to analyze your birth details and prepare your report you have requested. You will receive a copy of detailed report in the email provided to us.</p>
 
-                            <button type="button" class=" mt-4 btn btn-orange btn-rounded mx-0">Pay Now</button>
-                        </br>
-                            <a href="/"> Go to Astrolifeguide.com</a>
+
+
+                            <button id="rzp-button1" value="<?php echo e($pay['key']); ?>">Pay with Razorpay</button>
+                            <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+                            <form name='razorpayform' action="dopayment" method="POST">
+                                <?php echo csrf_field(); ?>
+                                <input type="hidden" name="razorpay_order_id" id="razorpay_order_id">
+                                <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
+                                <input type="hidden" name="razorpay_signature"  id="razorpay_signature" >
+                            </form>
+
+
+
+                                <a href="/"> Go to Astrolifeguide.com</a>
                         </div>
                     </div>
                 </div>
@@ -43,6 +59,7 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('footer_scripts'); ?>
 
+    <?php echo $__env->make('scripts.razorpay', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
 <?php $__env->stopSection(); ?>

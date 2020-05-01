@@ -586,7 +586,7 @@
                             </div>
                             <div class="sign_box_cont">
                                 <h2>Aries</h2>
-                                <p>31 Mar - 12 Oct</p>
+                                <p>21 Mar - 19 Apr</p>
                             </div>
                         </div>
                     </div>
@@ -597,7 +597,7 @@
                             </div>
                             <div class="sign_box_cont">
                                 <h2>Taurus</h2>
-                                <p>31 Mar - 12 Oct</p>
+                                <p>20 Apr - 20 May</p>
                             </div>
                         </div>
                     </div>
@@ -608,7 +608,7 @@
                             </div>
                             <div class="sign_box_cont">
                                 <h2>Gemini</h2>
-                                <p>31 Mar - 12 Oct</p>
+                                <p>21 May - 20 Jun/p>
                             </div>
                         </div>
                     </div>
@@ -619,7 +619,7 @@
                             </div>
                             <div class="sign_box_cont">
                                 <h2>Cancer</h2>
-                                <p>31 Mar - 12 Oct</p>
+                                <p>21 Jun - 22 Jul</p>
                             </div>
                         </div>
                     </div>
@@ -630,7 +630,7 @@
                             </div>
                             <div class="sign_box_cont">
                                 <h2>leo</h2>
-                                <p>31 Mar - 12 Oct</p>
+                                <p>23 Jul - 22 Aug</p>
                             </div>
                         </div>
                     </div>
@@ -641,7 +641,7 @@
                             </div>
                             <div class="sign_box_cont">
                                 <h2>Virgo</h2>
-                                <p>31 Mar - 12 Oct</p>
+                                <p>23 Aug - 22 Sep</p>
                             </div>
                         </div>
                     </div>
@@ -652,7 +652,7 @@
                             </div>
                             <div class="sign_box_cont">
                                 <h2>Libra</h2>
-                                <p>31 Mar - 12 Oct</p>
+                                <p>23 Sep - 22 Oct</p>
                             </div>
                         </div>
                     </div>
@@ -663,7 +663,7 @@
                             </div>
                             <div class="sign_box_cont">
                                 <h2>Scorpio</h2>
-                                <p>31 Mar - 12 Oct</p>
+                                <p>22 Oct - 21 Nov</p>
                             </div>
                         </div>
                     </div>
@@ -674,7 +674,7 @@
                             </div>
                             <div class="sign_box_cont">
                                 <h2>Sagittairus</h2>
-                                <p>31 Mar - 12 Oct</p>
+                                <p>22 Nov  - 21 Dec</p>
                             </div>
                         </div>
                     </div>
@@ -685,7 +685,7 @@
                             </div>
                             <div class="sign_box_cont">
                                 <h2>Capricorn</h2>
-                                <p>31 Mar - 12 Oct</p>
+                                <p>22 Dec - 19 Jan</p>
                             </div>
                         </div>
                     </div>
@@ -696,7 +696,7 @@
                             </div>
                             <div class="sign_box_cont">
                                 <h2>Aquarius</h2>
-                                <p>31 Mar - 12 Oct</p>
+                                <p>20 Jan - 18 Feb</p>
                             </div>
                         </div>
                     </div>
@@ -707,7 +707,7 @@
                             </div>
                             <div class="sign_box_cont">
                                 <h2>Pisces</h2>
-                                <p>31 Mar - 12 Oct</p>
+                                <p>19 Feb - 20 Mar</p>
                             </div>
                         </div>
                     </div>
@@ -722,7 +722,7 @@
             Problem" style="width: 90px !important; margin-top: 10px;" title="horoscope
             Problem">
                             <p class="ui-home-text">
-                                Aquarius</br>
+                                Aquarius<br>
                                 20 Jan - 18 Feb</p>
                             </p>
                         </a>
@@ -731,7 +731,7 @@
                         <a href="#">
                             <img src="<?php echo e(asset('astrolifeguide')); ?>/img//content/icon12_m.jpg" alt="Pisces" style="width:90px; padding-top:10px;" title="Pisces">
                             <p class="ui-home-text">
-                                Pisces</br>
+                                Pisces<br>
                                 19 Feb - 20 Mar</p>
                         </a>
                     </div>
@@ -842,7 +842,7 @@
                             <h2>Horoscope Revels The Will Of God</h2>
                             <p>Suffering from mundane problems that seem to overshadow your dream of happy living? Have tried every possible solution yet there is no respite? You can thank your lucky stars now because we bring before you the solution to all your problems. Whether you believe it or not, the movement of stars and planets affect us in ways more than one and it takes more than a layman to discover the aftermaths of the planetary movements.<br><br>
 
-                                Our ability to determine the effect of the positions of various planets on your well-being is the answer you are searching for. Our experience in providing a beneficial solution to his clients making him the best astrologer to reach out at your locality. His simple and effective remedies as gained him popularity and are been a ray of hope for many lives.</p>
+                                Our ability to determine the effect of the positions of various planets on your well-being is the answer you are searching for. Our experience in providing a beneficial solutions to our clients and feeling them happy is the bench mark of our success from the last 15 years. We at astrolifeguide, guide our clients with simple and effective remedies  which show them a ray of hope for their problems in their lives.</p>
 
                         </div>
                     </div>

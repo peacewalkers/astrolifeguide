@@ -2,9 +2,12 @@
 
 namespace App\Providers;
 
+use App\Billing\PaymentGateway;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
+
 use Illuminate\Support\ServiceProvider;
+use function foo\func;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(PaymentGateway::class, function ($app){
+            return new PaymentGateway(  'INR');
+        });
     }
 }

@@ -15,36 +15,43 @@
 
 // Homepage Route
 Route::group(['middleware' => ['web', 'checkblocked']], function () {
-    Route::get('/', 'WelcomeController@welcome')->name('welcome');
-    Route::get('/services/horoscope', function () {return view('services.horoscope');});
-    Route::get('/services/marriage', function () {return view('services.marriage');});
-    Route::get('/services/career', function () {return view('services.career');});
-    Route::get('/services/child', function () {return view('services.child');});
-    Route::get('/services/matchmaker', function () {return view('services.matchmaker');});
-    Route::get('/services/vastu', function () {return view('services.vastu');});
-    Route::get('/services/rajayoga', function () {return view('services.rajayoga');});
-    Route::get('/services/sadesati', function () {return view('services.sadesati');});
-    Route::get('/services/remedies', function () {return view('services.remedies');});
-    Route::get('/services/kalasarpadosha', function () {return view('services.kalasarpadosha');});
-    Route::get('/services/muhurtham', function () {return view('services.muhurtham');});
-    Route::get('/privacypolicy', function () {return view('privacy');});
-    Route::get('/refundpolicy', function () {return view('refund');});
-    Route::get('/termsandconditions', function () {return view('refund');});
+    Route::get('', 'WelcomeController@welcome')->name('welcome');
+    Route::get('services/horoscope', function () {return view('services.horoscope');});
+    Route::get('services/marriage', function () {return view('services.marriage');});
+    Route::get('services/career', function () {return view('services.career');});
+    Route::get('services/child', function () {return view('services.child');});
+    Route::get('services/matchmaker', function () {return view('services.matchmaker');});
+    Route::get('services/vastu', function () {return view('services.vastu');});
+    Route::get('services/rajayoga', function () {return view('services.rajayoga');});
+    Route::get('services/sadesati', function () {return view('services.sadesati');});
+    Route::get('services/remedies', function () {return view('services.remedies');});
+    Route::get('services/kalasarpadosha', function () {return view('services.kalasarpadosha');});
+    Route::get('services/muhurtham', function () {return view('services.muhurtham');});
+    Route::get('privacypolicy', function () {return view('privacy');});
+    Route::get('refundpolicy', function () {return view('refund');});
+    Route::get('termsandconditions', function () {return view('refund');});
+// route for make payment request using post method
+    Route::get('pay', 'RazorpayController@index')->name('pay');
+    Route::post('dopayment', 'RazorpayController@dopayment')->name('dopayment');
 
+    Route::post('verify', 'RazorpayController@verify')->name('verify');
 });
 
 Route::group(['middleware' => 'auth'], function () {
             Route::get('/horoscope/create', 'HoroscopeController@create');
             Route::post('/horoscope', 'HoroscopeController@store');
-            Route::get('/thankyou', function () {return view('pages.thankyou');});
+//            Route::get('thankyou', function () {return view('pages.thankyou');});
 
-            Route::get('/matchmaker/create', 'MatchmakerController@create');
+
+
+    Route::get('/matchmaker/create', 'MatchmakerController@create');
             Route::post('/matchmaker', 'MatchmakerController@store');
     });
 
 // Authentication Routes
     Auth::routes();
     Route::get('/contact', function () {return view('contact');});
+
 // Public Routes
     Route::group(['middleware' => ['web', 'activity', 'checkblocked']], function () {
 

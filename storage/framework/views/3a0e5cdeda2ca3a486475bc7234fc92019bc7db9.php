@@ -21,23 +21,21 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-        <!-- Icons -->
         <script src="https://kit.fontawesome.com/fef88c5b09.js" crossorigin="anonymous"></script>
+
+        <!-- Icons -->
+
         
 
         <link href="<?php echo e(asset('astrolifeguide')); ?>/img/brand/favicon.png" rel="icon" type="image/png">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
         <!-- Icons -->
-        <script src="https://kit.fontawesome.com/fef88c5b09.js" crossorigin="anonymous"></script>
-
         <link href="<?php echo e(asset('astrolifeguide')); ?>/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/animate.css">
         <link rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/fonts.css">
         <link rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/flaticon.css">
         <link rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/owl.carousel.css">
-        
         <link rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/magnific-popup.css">
         <link rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/reset.css">
 
@@ -47,6 +45,8 @@
         <link rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/responsive.css">
 
 
+
+
         
 
         <script>
@@ -54,7 +54,6 @@
                 'csrfToken' => csrf_token(),
             ]); ?>;
         </script>
-
 
 
         <?php echo $__env->yieldContent('head'); ?>
@@ -89,58 +88,6 @@
         <script src="<?php echo e(asset('astrolifeguide')); ?>/js/mdb.js"></script>
 
         <?php echo $__env->yieldPushContent('js'); ?>
-
-
-
-
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-        <script>
-            var SITEURL = '<?php echo e(URL::to('')); ?>';
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $('body').on('click', '#submit', function(e){
-                var totalAmount = $(this).attr("data-amount");
-                var product_id =  $(this).attr("data-id");
-                var options = {
-                    "key": "rzp_test_z5kb0FfffJDWuT",
-                    "amount": (totalAmount), // 2000 paise = INR 20
-                    "name": "astrolifeguide",
-                    "description": "Payment",
-                    "image": "https://www.tutsmake.com/wp-content/uploads/2018/12/cropped-favicon-1024-1-180x180.png",
-                    "handler": function (response){
-                        $.ajax({
-                            url: SITEURL + 'paysuccess',
-                            type: 'post',
-                            dataType: 'json',
-                            data: {
-                                razorpay_payment_id: response.razorpay_payment_id ,
-                                totalAmount : totalAmount ,product_id : product_id,
-                            },
-                            success: function (msg) {
-
-                                window.location.href = SITEURL + 'razor-thank-you';
-                            }
-                        });
-
-                    },
-                    "prefill": {
-                        "contact": '9959982432',
-                        "email":   'info@astrolifeguide.com',
-                    },
-                    "theme": {
-                        "color": "#528FF0"
-                    }
-                };
-                var rzp1 = new Razorpay(options);
-                rzp1.open();
-                e.preventDefault();
-            });
-
-        </script>
-
 
         <?php echo $__env->yieldContent('footer_scripts'); ?>
     </body>

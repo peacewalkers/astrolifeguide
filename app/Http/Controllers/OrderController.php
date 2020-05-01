@@ -21,7 +21,7 @@ class OrderController extends Controller
         $data = request()->validate([
                 'name' =>'',
             'orderID'=>'',
-    'reptype' => '',
+            'reptype' => '',
             'email'=>'',
             'phone'=>'',
         ]);

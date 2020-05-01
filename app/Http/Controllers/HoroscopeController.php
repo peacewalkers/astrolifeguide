@@ -5,17 +5,14 @@ namespace App\Http\Controllers;
 use App\Mail\RequestReceived;
 use App\Models\User;
 use App\Models\Horoscope;
-use App\Models\Order;
-use Illuminate\Auth;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Mail;
-use App\Http\Controllers\RazorpayController;
-use jeremykenedy\LaravelRoles\Models\Role;
-use App\Models\Profile;
 use App\Traits\CaptureIpTrait;
 use Validator;
-
+use Razorpay\Api\Api;
+use App\includes\Razorpay;
 
 
 class HoroscopeController extends Controller
@@ -53,10 +50,8 @@ class HoroscopeController extends Controller
         return view('horoscope.show-report', compact('horoscopes'));
     }
 
-
     public function store()
     {
-
         $data = request()->validate([
             'name' => 'required',
             'email' => 'required',
@@ -76,6 +71,8 @@ class HoroscopeController extends Controller
         ]);
 
         $user = auth()->user();
+        $user->id;
+        $amount = 1200;
         $orderid = time() . '-' . $user->id;
 
         auth()->user()->horoscopes()->create([
@@ -94,11 +91,43 @@ class HoroscopeController extends Controller
             'refdetails'=> $data['refdetails'],
         ]);
 
-
         /*    Mail::to($data['email'])->send(new RequestReceived());*/
+          $api = new Api(config('app.razorpay'), config('app.razorsecret'));
 
-        return redirect('/thankyou');
-    }
+            $orderData = [
+                'receipt'         => $orderid,
+                'amount'          => $amount, // 2000 rupees in paise
+                'currency'        => 'INR',
+                'payment_capture' => 1 // auto capture
+            ];
+
+            $razorpayOrder = $api->order->create($orderData);
+
+            $razorpayOrderId = $razorpayOrder['id'];
+
+        $pay = [
+            "key"               => "rzp_test_WEeL1hOzwdhPMF",
+            "amount"            => $amount,
+            "name"              => "Astrolifeguide",
+            "description"       => "",
+            "image"             => "https://s29.postimg.org/r6dj1g85z/daft_punk.jpg",
+            "prefill"           => [
+                "name"              => "Daft Punk",
+                "email"             => "customer@merchant.com",
+                "contact"           => "9999999999",
+            ],
+            "notes"             => [
+                "address"           => "Hello World",
+                "merchant_order_id" => $orderid,
+                "user"          => $user,
+            ],
+            "theme"             => [
+                "color"             => "#F37254"
+            ],
+            "order_id"          => $razorpayOrderId,
+        ];
+
+    return view('pages.thankyou', ['pay' =>$pay]);                }
 
 
 
