@@ -15,10 +15,11 @@ class RazorpayController extends Controller
 
     public function index()
     {
+
         return view('pages.thankyou');
     }
 
-    public function dopayment(Request $request) {
+    public function payment(Request $request) {
         //Input items of form
         $success = true;
 
@@ -30,8 +31,6 @@ class RazorpayController extends Controller
 
             try
             {
-
-                Log::info('Showing user profile for user: ');
 
                 // Please note that the razorpay order ID must
                 // come from a trusted source (session here, but
@@ -53,8 +52,10 @@ class RazorpayController extends Controller
 
         if ($success === true)
         {
-            $html = "<p>Your payment was successful</p>
-             <p>Payment ID: {$_POST['razorpay_payment_id']}</p>";
+            Log::error('Showing thank you pay page ');
+
+            return view('pages.thankpayd', ['attributes' => $attributes]);
+
         }
     }
 

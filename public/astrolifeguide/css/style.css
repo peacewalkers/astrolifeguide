@@ -1026,7 +1026,7 @@ ul{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background: url(../img/header/slide-4.jpg) 50% 0 repeat-y;
+    background: url(../img/header/slide-4.webp) 50% 0 repeat-y;
     position: relative;
     min-height:600px;
 }

@@ -27,6 +27,8 @@ class CreateHoroscopesTable extends Migration
             $table->string('tob');
             $table->string('pob');
             $table->string('cob');
+            $table->float('amount');
+            $table->string('razorpayOrderId')->nullable();
             $table->string('comments')->nullable();
             $table->string('reftype')->nullable();
             $table->string('refdetails')->nullable();

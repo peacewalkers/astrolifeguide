@@ -42,7 +42,7 @@
         <link type="text/css"  rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/mdb.css">
         <link type="text/css"  rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/style.css">
-        <link rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/responsive.css">
+
 
 
 

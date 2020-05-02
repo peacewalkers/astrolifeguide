@@ -8,6 +8,7 @@ use App\Models\Horoscope;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\Traits\CaptureIpTrait;
 use Validator;
@@ -62,11 +63,11 @@ class HoroscopeController extends Controller
             'tob' => 'required',
             'gender' => '',
             'reptype' => 'required',
-            'amount'    => '',
-            'paymenttype' =>    '',
+            'amount' => '',
+            'paymenttype' => '',
             'paymentstatus' => '',
-            'reftype'=> '',
-            'refdetails'   => '',
+            'reftype' => '',
+            'refdetails' => '',
             'comments' => '',
         ]);
 
@@ -88,47 +89,83 @@ class HoroscopeController extends Controller
             'tob' => $data['tob'],
             'comments' => $data['comments'],
             'reftype' => $data['reftype'],
-            'refdetails'=> $data['refdetails'],
+            'refdetails' => $data['refdetails'],
+            'amount' => 1200,
+            'razorpayOrderId' => null
         ]);
+        Log::info('Showing user profile for user: ');
 
-        /*    Mail::to($data['email'])->send(new RequestReceived());*/
-          $api = new Api(config('app.razorpay'), config('app.razorsecret'));
+        return redirect()->route('horoscopepay')->with('orderid', $orderid);
+    }
 
-            $orderData = [
-                'receipt'         => $orderid,
-                'amount'          => $amount, // 2000 rupees in paise
-                'currency'        => 'INR',
-                'payment_capture' => 1 // auto capture
-            ];
+    public function horoscopepay()
+    {
+        try {
+                $user = auth()->user();
 
-            $razorpayOrder = $api->order->create($orderData);
+                $neworderid = \Illuminate\Support\Facades\Session::get('orderid');
 
-            $razorpayOrderId = $razorpayOrder['id'];
-$key = config('app.razorpay');
+                $horoscope = auth()->user()->horoscopes()->where([
+                    'orderID' => $neworderid,
+                ])->first();
 
-        $pay = [
-            "key"               => $key,
-            "amount"            => $amount,
-            "name"              => "Astrolifeguide",
-            "description"       => "",
-            "image"             => "",
-            "prefill"           => [
-                "name"              => "",
-                "email"             => "",
-                "contact"           => "",
-            ],
-            "notes"             => [
-                "address"           => "",
-                "merchant_order_id" => $orderid,
-                "user"          => $user,
-            ],
-            "theme"             => [
-                "color"             => "#f05f1e"
-            ],
-            "order_id"          => $razorpayOrderId,
-        ];
+             if($horoscope) {
 
-    return view('pages.thankyou', ['pay' =>$pay]);                }
+                 $amount = $horoscope->amount;
+
+                 $api = new Api(config('app.razorpay'), config('app.razorsecret'));
+
+                 $orderData = [
+                     'receipt' => $neworderid,
+                     'amount' => $amount, // 2000 rupees in paise
+                     'currency' => 'INR',
+                     'payment_capture' => 1 // auto capture
+                 ];
+
+                 $razorpayOrder = $api->order->create($orderData);
+
+                 $razorpayOrderId = $razorpayOrder['id'];
+
+                 $horoscope->razorpayOrderId = $razorpayOrderId;
+                 $horoscope->save();
+
+                 $key = config('app.razorpay');
+
+                 $pay = [
+                     "key" => $key,
+                     "amount" => $amount,
+                     "name" => "Astrolifeguide",
+                     "description" => "",
+                     "image" => "",
+                     "prefill" => [
+                         "name" => "",
+                         "email" => "",
+                         "contact" => "",
+                     ],
+                     "notes" => [
+                         "address" => "",
+                         "merchant_order_id" => $neworderid,
+                         "user" => $user,
+                     ],
+                     "theme" => [
+                         "color" => "#f05f1e"
+                     ],
+                     "order_id" => $razorpayOrderId,
+                 ];
+
+                 return view('pages.thankyou', ['pay' => $pay]);
+             } else {
+
+                 echo "Invalid order iD";
+             }
+                //if completed
+                // already completed
+                //   else
+
+        }catch (\Exception $e) {
+            dd($e);
+        }
+    }
 
 
 
@@ -184,4 +221,3 @@ $key = config('app.razorpay');
     }
 
 }
-

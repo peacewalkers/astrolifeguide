@@ -42,7 +42,9 @@
         <link type="text/css"  rel="stylesheet" href="{{ asset('astrolifeguide') }}/css/mdb.css">
         <link type="text/css"  rel="stylesheet" href="{{ asset('astrolifeguide') }}/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ asset('astrolifeguide') }}/css/style.css">
+{{--
         <link rel="stylesheet" href="{{ asset('astrolifeguide') }}/css/responsive.css">
+--}}
 
 
 

@@ -32,7 +32,8 @@ Route::group(['middleware' => ['web', 'checkblocked']], function () {
     Route::get('termsandconditions', function () {return view('refund');});
 // route for make payment request using post method
     Route::get('pay', 'RazorpayController@index')->name('pay');
-    Route::post('dopayment', 'RazorpayController@dopayment')->name('dopayment');
+    Route::post('payment', 'RazorpayController@payment')->name('payment');
+    Route::get('horoscopepay', 'HoroscopeController@horoscopepay')->name('horoscopepay');
 
     Route::post('verify', 'RazorpayController@verify')->name('verify');
 });
@@ -40,6 +41,9 @@ Route::group(['middleware' => ['web', 'checkblocked']], function () {
 Route::group(['middleware' => 'auth'], function () {
             Route::get('/horoscope/create', 'HoroscopeController@create');
             Route::post('/horoscope', 'HoroscopeController@store');
+            Route::get('pay', 'RazorpayController@index')->name('pay');
+            Route::post('payment', 'RazorpayController@payment')->name('payment');
+            Route::get('horoscopepay', 'HoroscopeController@horoscopepay')->name('horoscopepay');
 //            Route::get('thankyou', function () {return view('pages.thankyou');});
 
 
