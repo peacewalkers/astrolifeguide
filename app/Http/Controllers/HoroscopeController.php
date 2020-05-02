@@ -104,25 +104,26 @@ class HoroscopeController extends Controller
             $razorpayOrder = $api->order->create($orderData);
 
             $razorpayOrderId = $razorpayOrder['id'];
+$key = config('app.razorpay');
 
         $pay = [
-            "key"               => "rzp_test_WEeL1hOzwdhPMF",
+            "key"               => $key,
             "amount"            => $amount,
             "name"              => "Astrolifeguide",
             "description"       => "",
-            "image"             => "https://s29.postimg.org/r6dj1g85z/daft_punk.jpg",
+            "image"             => "",
             "prefill"           => [
-                "name"              => "Daft Punk",
-                "email"             => "customer@merchant.com",
-                "contact"           => "9999999999",
+                "name"              => "",
+                "email"             => "",
+                "contact"           => "",
             ],
             "notes"             => [
-                "address"           => "Hello World",
+                "address"           => "",
                 "merchant_order_id" => $orderid,
                 "user"          => $user,
             ],
             "theme"             => [
-                "color"             => "#F37254"
+                "color"             => "#f05f1e"
             ],
             "order_id"          => $razorpayOrderId,
         ];

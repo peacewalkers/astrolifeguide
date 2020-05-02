@@ -5820,7 +5820,7 @@ color:#fff;
 background-color: #f05f1e;
 }
   .card .md-form label {
-    font-weight: 300; }
+    font-weight: 400; }
 
 .dropdown .dropdown-menu .dropdown-item:active {
   background-color: #757575; }
@@ -6885,6 +6885,7 @@ body.scrollable {
     .md-form .prefix ~ .form-text {
       margin-left: 2.6rem; }
   .md-form label {
+    font-weight: 400;
     position: absolute;
     top: 0;
     left: 0;

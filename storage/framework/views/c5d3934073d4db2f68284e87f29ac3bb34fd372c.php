@@ -1,7 +1,5 @@
 <?php $__env->startSection('head'); ?>
 
-
-
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 
@@ -29,9 +27,7 @@
 
                             <p class="mb-3">We have received your details, Please allow us 24hours - 48hours to analyze your birth details and prepare your report you have requested. You will receive a copy of detailed report in the email provided to us.</p>
 
-
-
-                            <button id="rzp-button1" value="<?php echo e($pay['key']); ?>">Pay with Razorpay</button>
+                            <button id="rzp-button1">Pay Now</button>
                             <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
                             <form name='razorpayform' action="dopayment" method="POST">
                                 <?php echo csrf_field(); ?>
