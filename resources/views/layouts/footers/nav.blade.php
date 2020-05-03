@@ -48,9 +48,9 @@
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
                 <!-- Content -->
-                <h6 class="text-uppercase font-weight-bold" style="color: #038C01 "><img src="{{asset('astrolifeguide')}}/img/header/logo.png" width="250" style="margin-top:-14px; margin-left:-10px;"></h6>
+                <h6 class="text-uppercase font-weight-bold" style="color: #038C01 "><img src="{{asset('astrolifeguide')}}/img/header/logo.png" width="250" style="margin-top:-22px; margin-left:-10px;"></h6>
                 <hr class="  mb-4 mt-0 d-inline-block mx-auto"  >
-                <p style="margin-top: -25px;">Our mission is to provide premium vedic astrology consultation services to our clients at economical prices. We strongly believe in providing accurate remedial solutions.</p>
+                <p style="margin-top: -25px;">Our mission is to provide premium vedic astrology consultation services to our clients at economical prices. We strongly believe in providing accurate remedial solutions which give quick relief to the clients.</p>
 
             </div>
             <!-- Grid column -->
