@@ -48,7 +48,7 @@
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
                 <!-- Content -->
-                <h6 class="text-uppercase font-weight-bold" style="color: #038C01 ">About Astrolifeguide</h6>
+                <h6 class="text-uppercase font-weight-bold" style="color: #038C01 "><img src="<?php echo e(asset('astrolifeguide')); ?>/img/header/logo.png"></h6>
                 <hr class="  mb-4 mt-0 d-inline-block mx-auto"  >
                 <p>Our mission is to provide premium vedic astrology consultation services to our clients at economical prices. We strongly believe in providing accurate remedial solutions.</p>
 

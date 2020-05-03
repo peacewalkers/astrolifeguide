@@ -873,7 +873,7 @@
                                             <div class="testimonial_slider_content">
                                                 <img src="<?php echo e(asset('astrolifeguide')); ?>/img/content/testi_client_img1.jpeg" style="margin-top: -60px;" class="img-responsive" alt="section3_t2__img">
                                                 <h5>Mr & Mrs Venkat</h5>
-                                                <small>IT Professionals & Banker</small>
+                                                <small>IT Professional & Banker</small>
                                                 <h4><span>&nbsp;</span></h4>
                                                 <i>"We are thankful to Astrolifeguide for bringing us together".
 
