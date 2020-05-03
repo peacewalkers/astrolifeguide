@@ -3,119 +3,96 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10 mt-5 pt-5">
+        <div class="col-md-6 pt-5">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header text-center text-white" style="background-color: #038C01;">{{ __('Create New Account') }} </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
+                        <div class="md-form mt-4">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required>
+                             <label for="name">{{ __('Username') }}</label>
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
-                            </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="first_name" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
+                        <div class="md-form mt-4">
 
-                            <div class="col-md-6">
-                                <input id="first_name" type="text" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}" required autofocus>
-
+                                <input id="first_name" type="text" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}" required>
+                                <label for="first_name">{{ __('First Name') }}</label>
                                 @if ($errors->has('first_name'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('first_name') }}</strong>
                                     </span>
                                 @endif
-                            </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="last_name" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required autofocus>
-
+                        <div class="md-form mt-4">
+                                <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required >
+                                <label for="last_name"> {{ __('Last Name') }} </label>
                                 @if ($errors->has('last_name'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('last_name') }}</strong>
                                     </span>
                                 @endif
-                            </div>
+
                         </div>
 
-                        <div class="form-group row">
-                            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
-                            <div class="col-md-6">
+                        <div class="md-form mt-4">
+
                                 <input id="phone" type="tel" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required>
+                                <label for="phone">  {{ __('Phone') }}</label>
                                 @if ($errors->has('phone'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('phone') }}</strong>
                                     </span>
                                 @endif
-                            </div>
+
                         </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                        <div class="md-form mt-4">
 
-                            <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
+                                <label for="email"> {{ __('E-Mail Address') }} </label>
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
-                            </div>
+
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                        <div class="md-form mt-4">
 
-                            <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
+                                <label for="password"> {{ __('Password') }} </label>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
-                            </div>
+
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
+                        <div class="md-form mt-4">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
+                                <label for="password-confirm"> {{ __('Confirm Password') }} </label>
+
                         </div>
 
 
-                        @if(config('settings.reCaptchStatus'))
-                            <div class="form-group">
-                                <div class="col-sm-6 col-sm-offset-4">
-                                    <div class="g-recaptcha" data-sitekey="{{ config('settings.reCaptchSite') }}"></div>
-                                </div>
-                            </div>
-                        @endif
-
-                        <div class="form-group row mb-4">
-                            <div class="mx-auto">
+                        <div class="md-form mt-4 mb-4 text-center">
                                 <button type="submit" class="btn text-white" style="background-color: #038C01">
                                     {{ __('Register') }}
                                 </button>
-                            </div>
+
                         </div>
 
                         <div class="row">

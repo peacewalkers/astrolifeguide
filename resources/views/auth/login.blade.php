@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6 mt-5 pt-5">
             <div class="card">
-                <div class="card-header text-center">LOGIN</div>
+                <div class="card-header text-center" style="background-color: #038C01; color:#fff;">LOGIN</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -24,7 +24,7 @@
                             </div>
 
                             <!-- Password -->
-                            <div class="md-form">
+                            <div class="md-form mt-4">
 
                                 <input id="materialLoginFormPassword" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                                 <label for="materialLoginFormPassword">Password</label>
@@ -47,21 +47,16 @@
 
                             <!-- Sign in button -->
                             <div class="formbutton">
-                            <button class="btn btn-rounded btn-block my-4 waves-effect z-depth-0 mx-auto" style="width:40%;" type="submit">Sign in</button>
+                            <button class="btn text-white btn-rounded btn-block my-4 waves-effect z-depth-0 mx-auto" style="width:40%;" type="submit">Sign in</button>
                             </div>
                             <!-- Register -->
                             <p class="text-center">Not a member?
-                                <a href="{{ route('register') }}">Register</a>
+                                <a href="{{ route('register') }}"><strong> Register Now </strong></a>
                             </p>
 
                             <!-- Social login -->
                             <p  class="text-center">or sign in with:
-                            <a type="button" href="(route('social.redirect',['provider' => 'facebook'])" class="btn-floating btn-sm  btn-fb">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a type="button" class="btn-floating btn-tw btn-sm">
-                                <i class="fab fa-twitter"></i>
-                            </a>
+                                @include('partials.socials-icons')
                             </p>
                     </form>
 
