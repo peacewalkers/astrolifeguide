@@ -73,7 +73,7 @@ class HoroscopeController extends Controller
 
         $user = auth()->user();
         $user->id;
-        $amount= "12000";
+        $amount= "120000";
         $orderid = time() . '-' . $user->id;
         $type = $data['reptype'];
 
