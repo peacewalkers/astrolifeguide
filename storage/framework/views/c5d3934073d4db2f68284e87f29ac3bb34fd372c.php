@@ -2,13 +2,9 @@
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
-
-
     <!--Main layout-->
     <div class="container pb-5 page-content">
         <div class="container z-depth-1">
-
-
             <!--Section: Content-->
             <section class="dark-grey-text">
 
@@ -29,7 +25,7 @@
 
                             <button id="rzp-button1">Pay Now</button>
                             <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-                            <form name='razorpayform' action="dopayment" method="POST">
+                            <form name='razorpayform' action="payment" method="POST">
                                 <?php echo csrf_field(); ?>
                                 <input type="hidden" name="razorpay_order_id" id="razorpay_order_id">
                                 <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">

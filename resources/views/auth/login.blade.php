@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6 mt-5 pt-5">
+        <div class="col-md-6 pt-5">
             <div class="card">
                 <div class="card-header text-center" style="background-color: #038C01; color:#fff;">LOGIN</div>
 
@@ -55,7 +55,7 @@
                             </p>
 
                             <!-- Social login -->
-                            <p  class="text-center">or sign in with:
+                            <p  class="text-center">or:
                                 @include('partials.socials-icons')
                             </p>
                     </form>

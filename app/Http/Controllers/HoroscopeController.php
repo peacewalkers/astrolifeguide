@@ -73,8 +73,10 @@ class HoroscopeController extends Controller
 
         $user = auth()->user();
         $user->id;
-        $amount = 1200;
+    $amount= "1200";
         $orderid = time() . '-' . $user->id;
+        $type = $data['reptype'];
+
 
         auth()->user()->horoscopes()->create([
             'name' => $data['name'],
@@ -90,7 +92,7 @@ class HoroscopeController extends Controller
             'comments' => $data['comments'],
             'reftype' => $data['reftype'],
             'refdetails' => $data['refdetails'],
-            'amount' => 1200,
+            'amount' => $amount,
             'razorpayOrderId' => null
         ]);
         Log::info('Showing user profile for user: ');

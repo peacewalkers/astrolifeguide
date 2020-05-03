@@ -46,8 +46,6 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('horoscopepay', 'HoroscopeController@horoscopepay')->name('horoscopepay');
 //            Route::get('thankyou', function () {return view('pages.thankyou');});
 
-
-
     Route::get('/matchmaker/create', 'MatchmakerController@create');
             Route::post('/matchmaker', 'MatchmakerController@store');
     });
