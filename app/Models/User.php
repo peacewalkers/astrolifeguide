@@ -1,9 +1,6 @@
 <?php
 
 namespace App\Models;
-
-use App\Matchmaker;
-use App\Payment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -120,7 +117,9 @@ class User extends Authenticatable
         return $this->hasMany(Horoscope::class);
     }
 
-    public function matchmaker() {
+
+
+    public function matchmakers() {
         return $this->hasMany(Matchmaker::class);
     }
 

@@ -22,10 +22,10 @@
                                                     <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab">Profile</a>
                                                 </li>
                                                 <li class="nav-item waves-effect waves-light">
-                                                    <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">Follow</a>
+                                                    <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">Details</a>
                                                 </li>
                                                 <li class="nav-item waves-effect waves-light">
-                                                    <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">Contact</a>
+                                                    <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">Password Reset</a>
                                                 </li>
                                             </ul>
                                             <!-- Tab panels -->
@@ -45,7 +45,7 @@
                                                                         <div class="dz-preview"></div>
                                                                         <?php echo Form::open(array('route' => 'avatar.upload', 'method' => 'POST', 'name' => 'avatarDropzone','id' => 'avatarDropzone', 'class' => 'form single-dropzone dropzone single', 'files' => true)); ?>
 
-                                                                        <img id="user_selected_avatar" class="user-avatar" src="<?php if($user->profile->avatar != NULL): ?> <?php echo e($user->profile->avatar); ?> <?php endif; ?>" alt="<?php echo e($user->name); ?>">
+                                                                        <img id="user_selected_avatar" class="user-avatar" src="<?php if($user->profile->avatar != NULL): ?> <?php echo e($user->profile->avatar); ?> <?php endif; ?>" alt="">
                                                                         <?php echo Form::close(); ?>
 
                                                                     </div>
@@ -106,11 +106,10 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="form-group margin-bottom-2">
-                                                        <div class="col-12">
-                                                            <button class="btn"> <a href="<?php echo e(trans ('profile.submitButton')); ?>" > </a> Update </button>
+                                                        <div class="formbutton">
+                                                            <button class="btn text-white btn-rounded btn-block my-4 waves-effect z-depth-0 mx-auto" style="width:200px;"><a href="<?php echo e(trans ('profile.submitButton')); ?>" > </a> Update </button>
                                                         </div>
-                                                    </div>
+
                                                     <?php echo Form::close(); ?>
 
                                                 </div>
@@ -210,17 +209,16 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="form-group margin-bottom-2">
-                                                        <div class="col-12 mx-auto">
-                                                            <button class="btn"> <a href="<?php echo e(trans('profile.submitProfileButton')); ?>"> </a> Submit </button>
-                                                        </div>
+                                                    <div class="formbutton">
+                                                        <button class="btn text-white btn-rounded btn-block my-4 waves-effect z-depth-0 mx-auto" style="width:200px;"><a href="<?php echo e(trans('profile.submitProfileButton')); ?>"> </a> Update </button>
                                                     </div>
+
                                                 </div>
                                                 <!-- Panel 2 -->
                                                 <!-- Panel 3 -->
                                                 <div class="tab-pane fade" id="panel3" role="tabpanel">
                                                     <ul class="account-admin-subnav nav nav-pills nav-justified margin-bottom-3 margin-top-1">
-                                                        <li class="nav-item bg-info">
+                                                        <li class="nav-item text-white" style="background-color: #038c01!important">
                                                             <a data-toggle="pill" href="#changepw" class="nav-link warning-pill-trigger text-dark active" aria-selected="true">
                                                                 <?php echo e(trans('profile.changePwPill')); ?>
 
@@ -237,10 +235,10 @@
 
                                                         <div id="changepw" class="tab-pane fade show active">
 
-                                                            <h3 class="margin-bottom-1 text-center text-warning">
+                                                            <h5 class="margin-bottom-1 text-center">
                                                                 <?php echo e(trans('profile.changePwTitle')); ?>
 
-                                                            </h3>
+                                                            </h5>
 
                                                             <?php echo Form::model($user, array('action' => array('ProfilesController@updateUserPassword', $user->id), 'method' => 'PUT', 'autocomplete' => 'new-password')); ?>
 
@@ -277,12 +275,10 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group row">
-                                                                <div class="col-12">
-                                                                    <button class="btn"> <a href="<?php echo e(trans ('profile.submitPWButton')); ?>" > </a> Change Password </button>
-                                                                </div>
-                                                                </div>
+                                                            <div class="formbutton">
+                                                                <button class="btn text-white btn-rounded btn-block my-4 waves-effect z-depth-0 mx-auto" style="width:200px;"><a href="<?php echo e(trans ('profile.submitPWButton')); ?>" > </a> Update </button>
                                                             </div>
+
                                                             <?php echo Form::close(); ?>
 
 

@@ -99,7 +99,6 @@
                             <?php echo csrf_field(); ?>
                             <h5 class="my-3  py-2 text-uppercase text-white" style="background-color:#f05f1e;"> Career Report</h5>
                             <input type="hidden" name="reptype" value="Career">
-                            <input type="hidden" name="amount" value="1000">
 
                             <div class="card-body mx-4">
                                 <!--Body-->

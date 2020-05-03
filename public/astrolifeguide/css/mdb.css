@@ -4011,7 +4011,7 @@ a.waves-effect, a.waves-light {
       background-color: #5a95f5 !important; }
   .btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active,
   .show > .btn-primary.dropdown-toggle {
-    background-color: #0b51c5 !important;
+    background-color: #f31a25 !important;
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
   .btn-primary:not([disabled]):not(.disabled):active:focus, .btn-primary:not([disabled]):not(.disabled).active:focus,
   .show > .btn-primary.dropdown-toggle:focus {

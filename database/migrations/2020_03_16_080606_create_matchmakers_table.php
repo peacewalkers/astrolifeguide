@@ -22,8 +22,8 @@ class CreateMatchmakersTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('gender');
-            $table->date('dob');
-            $table->time('tob');
+            $table->string('dob');
+            $table->string('tob');
             $table->string('pob');
             $table->string('cob')->nullable();
             $table->string('comments')->nullable();
@@ -34,26 +34,27 @@ class CreateMatchmakersTable extends Migration
             $table->string('paymentstatus')->nullable();
 
             $table->string('nameone')->nullable();
-            $table->date('dobone')->nullable();
-            $table->time('tobone')->nullable();
+            $table->string('dobone')->nullable();
+            $table->string('tobone')->nullable();
             $table->string('pobone')->nullable();
             $table->string('cobone')->nullable();
             $table->string('comone')->nullable();
 
             $table->string('nametwo')->nullable();
-            $table->date('dobtwo')->nullable();
-            $table->time('tobtwo')->nullable();
-            $table->time('cobtwo')->nullable();
+            $table->string('dobtwo')->nullable();
+            $table->string('tobtwo')->nullable();
+            $table->string('cobtwo')->nullable();
             $table->string('pobtwo')->nullable();
             $table->string('comtwo')->nullable();
 
             $table->string('namethree')->nullable();
-            $table->date('dobthree')->nullable();
-            $table->time('tobthree')->nullable();
+            $table->string('dobthree')->nullable();
+            $table->string('tobthree')->nullable();
             $table->string('pobthree')->nullable();
             $table->string('cobthree')->nullable();
             $table->string('comthree')->nullable();
-
+            $table->float('amount');
+            $table->string('razorpayOrderId')->nullable();
             $table->timestamps();
             $table->index('user_id');
         });

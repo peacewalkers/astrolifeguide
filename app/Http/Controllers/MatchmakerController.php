@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Mail\RequestReceived;
-use App\Models\User;
-use App\Models\Matchmaker;
-use App\Models\Order;
-use Illuminate\Auth;
+use App\User;
+use App\Matchmaker;
+
+use App\Models\Auth;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
-use App\Http\Controllers\RazorpayController;
-use jeremykenedy\LaravelRoles\Models\Role;
-use App\Models\Profile;
 use App\Traits\CaptureIpTrait;
 use Validator;
+use Razorpay\Api\Api;
+use App\includes\Razorpay;
 
 class MatchmakerController extends Controller
 {
@@ -46,16 +47,15 @@ class MatchmakerController extends Controller
             'name' => 'required',
             'email' => 'required | email',
             'phone' => 'required',
-            'pob'   =>  'required',
-            'dob'   =>  'required | date',
-            'tob'   =>  'required',
-            'cob'   =>  'required',
-            'gender'=>  '',
-            'amount'    => '',
-            'paymenttype' =>    '',
+            'pob' => 'required',
+            'dob' => 'required ',
+            'tob' => 'required',
+            'cob' => 'required',
+            'gender' => '',
+            'paymenttype' => '',
             'paymentstatus' => '',
-            'reftype'=> '',
-            'refdetails'   => '',
+            'reftype' => '',
+            'refdetails' => '',
 
             'comments' => '',
 
@@ -78,56 +78,122 @@ class MatchmakerController extends Controller
             'cobthree' => 'nullable|string',
         ]);
 
+        $user = auth()->user();
+        $amount = "150000";
+        $orderid = time() . '-' . $user->id;
+        Log::info('Showing matchmaker form: ');
+
+        try{
         auth()->user()->matchmakers()->create([
+
             'name' => $data['name'],
-            'gender'  => $data['gender'],
+            'gender' => $data['gender'],
             'email' => $data['email'],
             'phone' => $data['phone'],
-            'pob'   =>  $data['pob'],
-            'dob'   =>  $data['dob'],
-            'tob'   =>  $data['tob'],
-            'cob'   =>  $data['cob'],
-            'comments' =>$data['comments'],
+            'pob' => $data['pob'],
+            'dob' => $data['dob'],
+            'tob' => $data['tob'],
+            'cob' => $data['cob'],
+            'comments' => $data['comments'],
 
             'nameone' => $data['nameone'],
-            'pobone'   =>  $data['pobone'],
-            'dobone'   =>  $data['dobone'],
-            'tobone'   =>  $data['tobone'],
-            'cobone'   =>  $data['cobone'],
+            'pobone' => $data['pobone'],
+            'dobone' => $data['dobone'],
+            'tobone' => $data['tobone'],
+            'cobone' => $data['cobone'],
 
             'nametwo' => $data['nametwo'],
-            'pobtwo'   =>  $data['pobtwo'],
-            'dobtwo'   =>  $data['dobtwo'],
-            'tobtwo'   =>  $data['tobtwo'],
-            'cobtwo'   =>  $data['cobtwo'],
+            'pobtwo' => $data['pobtwo'],
+            'dobtwo' => $data['dobtwo'],
+            'tobtwo' => $data['tobtwo'],
+            'cobtwo' => $data['cobtwo'],
 
             'namethree' => $data['namethree'],
-            'pobthree'   =>  $data['pobthree'],
-            'dobthree'   =>  $data['dobthree'],
-            'tobthree'   =>  $data['tobthree'],
-            'cobthree'   =>  $data['cobthree'],
+            'pobthree' => $data['pobthree'],
+            'dobthree' => $data['dobthree'],
+            'tobthree' => $data['tobthree'],
+            'cobthree' => $data['cobthree'],
 
+            'orderID' => $orderid,
+            'amount' => $amount,
+            'razorpayOrderId' => null,
         ]);
-
-
-        Mail::to($data['email'])->send(new RequestReceived());
-        return redirect('/thankyou');    }
-
-    public function update()
-    {
-
+    }catch (\Exception $e) {
+dd($e);
+}
+        return redirect()->route('matchmakerpay')->with('orderid', $orderid);
     }
 
-  /*  public function show ($id)
-    {
-        $matchmakers = Matchmaker::findorfail($id);
-        return view('matchmaker.show-report', compact('matchmakers'));
-    }*/
 
-    public function destroy()
+    public function matchmakerpay()
     {
+        try {
+            $user = auth()->user();
 
+            $neworderid = \Illuminate\Support\Facades\Session::get('orderid');
+
+            $matchmaker = auth()->user()->matchmakers()->where([
+                'orderID' => $neworderid,
+            ])->first();
+
+            if($matchmaker) {
+
+                $amount = $matchmaker->amount;
+
+                $api = new Api(config('app.razorpay'), config('app.razorsecret'));
+
+                $orderData = [
+                    'receipt' => $neworderid,
+                    'amount' => $amount, // 2000 rupees in paise
+                    'currency' => 'INR',
+                    'payment_capture' => 1 // auto capture
+                ];
+
+                $razorpayOrder = $api->order->create($orderData);
+
+                $razorpayOrderId = $razorpayOrder['id'];
+
+                $matchmaker->razorpayOrderId = $razorpayOrderId;
+                $matchmaker->save();
+
+                $key = config('app.razorpay');
+
+                $pay = [
+                    "key" => $key,
+                    "amount" => $amount,
+                    "name" => "Astrolifeguide",
+                    "description" => "",
+                    "image" => "",
+                    "prefill" => [
+                        "name" => "",
+                        "email" => "",
+                        "contact" => "",
+                    ],
+                    "notes" => [
+                        "address" => "",
+                        "merchant_order_id" => $neworderid,
+                        "user" => $user,
+                    ],
+                    "theme" => [
+                        "color" => "#f05f1e"
+                    ],
+                    "order_id" => $razorpayOrderId,
+                ];
+
+                return view('pages.thankyou', ['pay' => $pay]);
+            } else {
+
+                echo "Invalid order iD";
+            }
+            //if completed
+            // already completed
+            //   else
+
+        }catch (\Exception $e) {
+            dd($e);
+        }
     }
+
 
     public function search(Request $request)
     {

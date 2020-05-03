@@ -59,7 +59,8 @@ class RazorpayController extends Controller
         }
     }
 
-    public function verify(Request $request) {
-
+    public function verifyWebhookSignature($payload, $actualSignature, $secret)
+    {
+        self::verifySignature($payload, $actualSignature, $secret);
     }
 }

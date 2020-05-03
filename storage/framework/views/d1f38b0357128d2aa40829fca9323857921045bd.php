@@ -26,29 +26,71 @@
                                     </div>
                                     <p>Please write in details, we will get back to you as early as possible.</p>
                                     <!-- Body -->
-                                    <div class="md-form">
+                                    <form method="POST" action="/thankyou" enctype="multipart/form-data">
+                                        <?php echo csrf_field(); ?>
 
-                                        <input type="text" id="form-name" class="form-control">
-                                        <label for="form-name">Your name</label>
-                                    </div>
-                                    <div class="md-form">
+                                        <div class="md-form">
 
-                                        <input type="text" id="form-email" class="form-control">
-                                        <label for="form-email">Your email</label>
-                                    </div>
-                                    <div class="md-form">
+                                        <input id="name" type="text" class="form-control<?php echo e($errors->has('name') ? ' is-invalid' : ''); ?>" name="name" value="<?php echo e(old('name')); ?>" >
+                                        <label for="name">Your name</label>
 
-                                        <input type="text" id="form-Subject" class="form-control">
-                                        <label for="form-Subject">Subject</label>
+                                            <?php if($errors->has('name')): ?>
+                                                <span class="invalid-feedback">
+                                        <strong><?php echo e($errors->first('name')); ?></strong>
+                                    </span>
+                                            <?php endif; ?>
                                     </div>
-                                    <div class="md-form">
 
-                                        <textarea id="form-text" class="form-control md-textarea" rows="3"></textarea>
-                                        <label for="form-text">Your message</label>
+                                    <div class="md-form mt-4">
+
+                                        <input id="phone" type="tel" class="form-control<?php echo e($errors->has('phone') ? ' is-invalid' : ''); ?>" name="phone" value="<?php echo e(old('phone')); ?>" >
+                                        <label for="phone">Phone Number</label>
+
+                                        <?php if($errors->has('phone')): ?>
+                                            <span class="invalid-feedback">
+                                        <strong><?php echo e($errors->first('phone')); ?></strong>
+                                    </span>
+                                        <?php endif; ?>
                                     </div>
-                                    <div class="text-center">
-                                        <button class="btn text-white" style="background-color: #038C01">Submit</button>
+
+                                        <div class="md-form mt-4">
+
+                                        <input id="email" type="email" class="form-control<?php echo e($errors->has('email') ? ' is-invalid' : ''); ?>" name="email" value="<?php echo e(old('email')); ?>" >
+                                        <label for="email">Your email</label>
+
+                                        <?php if($errors->has('email')): ?>
+                                            <span class="invalid-feedback">
+                                        <strong><?php echo e($errors->first('email')); ?></strong>
+                                    </span>
+                                        <?php endif; ?>
                                     </div>
+
+                                        <div class="md-form mt-4">
+                                        <input id="subject" type="text" class="form-control<?php echo e($errors->has('subject') ? ' is-invalid' : ''); ?>" name="subject" value="<?php echo e(old('subject')); ?>" >
+                                        <label for="subject">Subject</label>
+
+                                        <?php if($errors->has('subject')): ?>
+                                            <span class="invalid-feedback">
+                                        <strong><?php echo e($errors->first('subject')); ?></strong>
+                                    </span>
+                                        <?php endif; ?>
+                                    </div>
+
+                                        <div class="md-form mt-4">
+                                            <textarea id="message" type="text" class="md-textarea form-control<?php echo e($errors->has('message') ? ' is-invalid' : ''); ?>" name="message" value="<?php echo e(old('message')); ?>" col="2" ></textarea>
+                                        <label for="message">Your message</label>
+
+                                        <?php if($errors->has('message')): ?>
+                                            <span class="invalid-feedback">
+                                        <strong><?php echo e($errors->first('message')); ?></strong>
+                                    </span>
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <div class="text-center mt-4">
+                                        <button class="btn text-white" name="submit" type="submit" style="background-color: #038C01">Send</button>
+                                    </div>
+                                    </form>
                                 </div>
                             </div>
                             <!-- Form with header -->

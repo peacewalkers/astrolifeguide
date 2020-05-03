@@ -32,24 +32,13 @@
 				<h5>{{ $user->phone }}</h5>
 				<p class="dark-grey-text">{{ $user->email }}</p>
 
-{{--
-				<h5> Share About Astrolifeguide.com</h5>
-				<!-- Social -->
-				<a type="button" class="btn-floating btn-small"><i class="fab fa-facebook-f grey-text"></i></a>
-				<a type="button" class="btn-floating btn-small"><i class="fab fa-twitter grey-text"></i></a>
-				<a type="button" class="btn-floating btn-small"><i class="fab fa-linkedin-in grey-text"></i></a>
-
-				<!-- Text -->
-				<p class="card-text mt-3">Some quick example text to build on the card title and make up the bulk of
-					the card's content.
-				</p>
---}}
-
 				@if ($user->profile)
 					@if (Auth::user()->id == $user->id)
 
-						{!! HTML::icon_link(URL::to('/profile/'.Auth::user()->name.'/edit'), 'fa fa-fw fa-cog', trans('titles.editProfile'), array('class' => 'btn btn-small')) !!}
-
+						<div class="formbutton">
+							<a href="{{ url('/profile/'.Auth::user()->name.'/edit')}}">  <button class="btn text-white btn-rounded btn-block my-4 waves-effect z-depth-0 mx-auto" style="width:200px;" type="submit">
+								{{trans('titles.editProfile')}}</button></a>
+						</div>
 					@endif
 				@else
 

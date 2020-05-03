@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\RequestReceived;
 use App\Models\User;
-use App\Models\Horoscope;
+use App\Models\Auth;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -73,9 +73,46 @@ class HoroscopeController extends Controller
 
         $user = auth()->user();
         $user->id;
-        $amount= "120000";
+        $amount= "";
         $orderid = time() . '-' . $user->id;
         $type = $data['reptype'];
+
+        if($type == "Career") {
+            $amount = "120000";
+        }
+        elseif($type == "Horoscope") {
+            $amount = "250000";
+        }
+        elseif($type == "Muhurtham") {
+            $amount = "30000";
+        }
+        elseif($type == "Child") {
+            $amount = "120000";
+        }
+        elseif($type == "kalasarpadosha") {
+            $amount = "120000";
+        }
+        elseif($type == "Marriage") {
+            $amount = "120000";
+        }
+        elseif($type == "Compatibility") {
+            $amount = "150000";
+        }
+        elseif($type == "Rajayoga") {
+            $amount = "120000";
+        }
+        elseif($type == "Remedies") {
+            $amount = "120000";
+        }
+        elseif($type == "SadeSati") {
+            $amount = "120000";
+        }
+        elseif($type == "Vastu") {
+            $amount = "150000";
+        }
+        elseif($type == "Muhurtham") {
+            $amount = "120000";
+        }
 
 
         auth()->user()->horoscopes()->create([

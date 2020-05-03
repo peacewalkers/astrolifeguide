@@ -34,6 +34,7 @@ Route::group(['middleware' => ['web', 'checkblocked']], function () {
     Route::get('pay', 'RazorpayController@index')->name('pay');
     Route::post('payment', 'RazorpayController@payment')->name('payment');
     Route::get('horoscopepay', 'HoroscopeController@horoscopepay')->name('horoscopepay');
+    Route::get('matchmakerpay', 'MatchmakerController@matchmakerpay')->name('matchmakerpay');
 
     Route::post('verify', 'RazorpayController@verify')->name('verify');
 });
@@ -41,13 +42,14 @@ Route::group(['middleware' => ['web', 'checkblocked']], function () {
 Route::group(['middleware' => 'auth'], function () {
             Route::get('/horoscope/create', 'HoroscopeController@create');
             Route::post('/horoscope', 'HoroscopeController@store');
+            Route::post('/matchmaker', 'MatchmakerController@store');
+
             Route::get('pay', 'RazorpayController@index')->name('pay');
             Route::post('payment', 'RazorpayController@payment')->name('payment');
             Route::get('horoscopepay', 'HoroscopeController@horoscopepay')->name('horoscopepay');
-//            Route::get('thankyou', function () {return view('pages.thankyou');});
 
-    Route::get('/matchmaker/create', 'MatchmakerController@create');
-            Route::post('/matchmaker', 'MatchmakerController@store');
+
+
     });
 
 // Authentication Routes
@@ -182,3 +184,4 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
 Route::redirect('/php', '/phpinfo', 301);
 
 Route::get('/searchfrm', function () {return view('vendor/scripts/blocked-form');});
+Route::post('/thankyou', 'ContactController@store');

@@ -9,18 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Matchmaker extends Model
 {
-    protected $guarded = [];
+    protected $table = 'matchmakers';
 
-    public function user()
-    {
+    protected $guarded = ['id'];
+
+    public function user() {
         return $this->belongsTo(User::class);
     }
 
-    public function order() {
-        return $this->hasMany(Order::class);
-    }
-
-    public function payment() {
-        return $this->hasMany(Payment::class);
-    }
 }

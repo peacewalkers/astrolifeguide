@@ -100,7 +100,7 @@
                         <form class="card" action="/horoscope" enctype="multipart/form-data" method="post" style="width: 100%;">
                             @csrf
                             <h5 class="my-3 text-white py-2 text-uppercase" style="background-color:#f05f1e;"> Detailed Horoscope Report</h5>
-                            <input type="hidden" name="reptype" value="horoscope">
+                            <input type="hidden" name="reptype" value="Horoscope">
 
                             <div class="card-body mx-4">
                                 <!--Body-->

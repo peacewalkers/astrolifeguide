@@ -33,14 +33,13 @@
 				<h5><?php echo e($user->phone); ?></h5>
 				<p class="dark-grey-text"><?php echo e($user->email); ?></p>
 
-
-
 				<?php if($user->profile): ?>
 					<?php if(Auth::user()->id == $user->id): ?>
 
-						<?php echo HTML::icon_link(URL::to('/profile/'.Auth::user()->name.'/edit'), 'fa fa-fw fa-cog', trans('titles.editProfile'), array('class' => 'btn btn-small')); ?>
-
-
+						<div class="formbutton">
+							<a href="<?php echo e(url('/profile/'.Auth::user()->name.'/edit')); ?>">  <button class="btn text-white btn-rounded btn-block my-4 waves-effect z-depth-0 mx-auto" style="width:200px;" type="submit">
+								<?php echo e(trans('titles.editProfile')); ?></button></a>
+						</div>
 					<?php endif; ?>
 				<?php else: ?>
 
