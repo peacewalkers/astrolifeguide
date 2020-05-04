@@ -42,9 +42,7 @@
         <link type="text/css"  rel="stylesheet" href="{{ asset('astrolifeguide') }}/css/mdb.css">
         <link type="text/css"  rel="stylesheet" href="{{ asset('astrolifeguide') }}/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ asset('astrolifeguide') }}/css/style.css">
-{{--
         <link rel="stylesheet" href="{{ asset('astrolifeguide') }}/css/responsive.css">
---}}
 
 
 
@@ -62,6 +60,10 @@
 
     </head>
     <body>
+    <div id="preloader">
+        <div id="status"><img src="{{asset('astrolifeguide')}}/img/header/horoscope.gif" id="preloader_image" alt="loader">
+        </div>
+    </div>
         <div id="app">
 
             @include('partials.nav')

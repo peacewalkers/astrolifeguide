@@ -31,23 +31,21 @@ Route::group(['middleware' => ['web', 'checkblocked']], function () {
     Route::get('refundpolicy', function () {return view('refund');});
     Route::get('termsandconditions', function () {return view('refund');});
 // route for make payment request using post method
-    Route::get('pay', 'RazorpayController@index')->name('pay');
-    Route::post('payment', 'RazorpayController@payment')->name('payment');
-    Route::get('horoscopepay', 'HoroscopeController@horoscopepay')->name('horoscopepay');
-    Route::get('matchmakerpay', 'MatchmakerController@matchmakerpay')->name('matchmakerpay');
+
 
     Route::post('verify', 'RazorpayController@verify')->name('verify');
 });
 
 Route::group(['middleware' => 'auth'], function () {
-            Route::get('/horoscope/create', 'HoroscopeController@create');
             Route::post('/horoscope', 'HoroscopeController@store');
             Route::post('/matchmaker', 'MatchmakerController@store');
+            Route::post('/vastu', 'VastuController@store');
 
             Route::get('pay', 'RazorpayController@index')->name('pay');
             Route::post('payment', 'RazorpayController@payment')->name('payment');
             Route::get('horoscopepay', 'HoroscopeController@horoscopepay')->name('horoscopepay');
-
+            Route::get('matchmakerpay', 'MatchmakerController@matchmakerpay')->name('matchmakerpay');
+            Route::get('vastupay', 'VastuController@matchmakerpay')->name('vastupay');
 
 
     });

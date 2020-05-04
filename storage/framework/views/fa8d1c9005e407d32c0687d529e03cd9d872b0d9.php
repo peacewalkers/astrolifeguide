@@ -2,29 +2,74 @@
 
     <!-- main_header_wrapper end -->
     <!-- hs Slider Start -->
-    <div class="slider-area">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <div class="carousel-captions caption-1">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="content">
-                                        <h1 data-animation="animated bounceInLeft">Welcome To</h1>
-                                        <h2 data-animation="animated zoomInDown"><span>AstroLifeGuide.com</span></h2>
-                                        <p data-animation="animated bounceInUp text-white">Your Trusted Source For Vedic Astrology Services</p>
+    <!--Carousel Wrapper-->
+    <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-2" data-slide-to="1"></li>
+        </ol>
+        <!--/.Indicators-->
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <div class="view">
+                    <img class="d-block w-100" src="<?php echo e(asset('astrolifeguide')); ?>/img/header/slide-4.webp"
+                         alt="First slide">
+                    <div class="mask rgba-black-light"></div>
+                </div>
 
-                                        <div class="clear"></div>
-                                    </div>
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="content">
+                                    <h1 class="text-white">Welcome To</h1>
+                                    <h2 data-animation="text-white"><span>AstroLifeGuide.com</span></h2>
+                                    <p data-animation="text-white">Your Trusted Source For Vedic Astrology Services</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <!--Mask color-->
+                <div class="view">
+                    <img class="d-block w-100" src="<?php echo e(asset('astrolifeguide')); ?>/img/header/slide3.jpg"
+                         alt="Second slide">
+                </div>
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="content">
+                                    <h1 class="text-white">Welcome To</h1>
+                                    <h2 class="text-white"><span>AstroLifeGuide.com</span></h2>
+                                    <p class="text-white">Your Trusted Source For Vedic Astrology Services</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
+        <!--/.Slides-->
+        <!--Controls-->
+        <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
     </div>
+    <!--/.Carousel Wrapper-->
+    
     <!-- hs Slider End -->
     <!-- hs service wrapper Start -->
     <div class="hs_service_main_wrapper" id="services">

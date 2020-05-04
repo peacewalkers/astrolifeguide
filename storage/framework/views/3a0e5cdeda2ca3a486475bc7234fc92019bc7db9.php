@@ -42,7 +42,7 @@
         <link type="text/css"  rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/mdb.css">
         <link type="text/css"  rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/style.css">
-
+        <link rel="stylesheet" href="<?php echo e(asset('astrolifeguide')); ?>/css/responsive.css">
 
 
 
@@ -60,6 +60,10 @@
 
     </head>
     <body>
+    <div id="preloader">
+        <div id="status"><img src="<?php echo e(asset('astrolifeguide')); ?>/img/header/horoscope.gif" id="preloader_image" alt="loader">
+        </div>
+    </div>
         <div id="app">
 
             <?php echo $__env->make('partials.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

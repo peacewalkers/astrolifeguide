@@ -1741,13 +1741,14 @@ ul{
     display:inline-block;
 }
 .hs_about_heading_wrapper h2{
-    font-size:40px;
+    font-size:30px;
     font-weight:100;
     color:#000000;
 }
 .hs_about_heading_wrapper h2 span{
     font-weight:bold;
 }
+
 
 .hs_about_heading_wrapper h4 span{
     width:8px;
@@ -2190,7 +2191,7 @@ ul{
     float:left;
     background-color: #fff;
     width:100%;
-    padding-top:50px;
+    padding-top:15px;
     padding-bottom:45px;
 }
 .hs_service_main_box_wrapper{
