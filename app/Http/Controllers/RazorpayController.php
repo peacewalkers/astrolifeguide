@@ -13,6 +13,11 @@ use Razorpay\Api\Errors\SignatureVerificationError;
 class RazorpayController extends Controller
 {
 
+    private function api () {
+        $api = new Api(config('app.razorpay'), config('app.razorsecret'));
+
+    }
+
     public function index()
     {
 
@@ -31,7 +36,6 @@ class RazorpayController extends Controller
 
             try
             {
-
                 // Please note that the razorpay order ID must
                 // come from a trusted source (session here, but
                 // could be database or something else)
@@ -43,9 +47,11 @@ class RazorpayController extends Controller
 
                 $api->utility->verifyPaymentSignature($attributes);
             }
+
             catch(SignatureVerificationError $e)
             {
                 $success = false;
+                print_r($attributes);
                 $error = 'Razorpay Error : ' . $e->getMessage();
             }
         }
@@ -57,10 +63,39 @@ class RazorpayController extends Controller
             return view('pages.thankpayd', ['attributes' => $attributes]);
 
         }
+        else {
+
+        }
     }
 
     public function verifyWebhookSignature($payload, $actualSignature, $secret)
     {
+
+        Log::info('Showing webhook into');
+
+
+
         self::verifySignature($payload, $actualSignature, $secret);
     }
+
+    public function verifypay($orderId) {
+
+        $api = new Api(config('app.razorpay'), config('app.razorsecret'));
+
+        $payments = $api->order->fetch($orderId);
+
+        $link = $api->invoice->create(array(
+                'type' => 'link',
+                'amount' => $payments['amount'],
+                'description' => 'test',
+                'customer' => array(
+                    'email' => 'bharghav.santosh@gmail.com',
+                )
+            )
+        );
+
+        $link->notifyBy('sms');
+
+    }
+
 }

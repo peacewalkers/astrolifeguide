@@ -3,7 +3,6 @@
 @section('content')
 
     <!-- main_header_wrapper end -->
-    <!-- hs Slider Start -->
     <!--Carousel Wrapper-->
     <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
         <!--Indicators-->
@@ -71,29 +70,6 @@
         <!--/.Controls-->
     </div>
     <!--/.Carousel Wrapper-->
-    {{--    <div class="slider-area">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <div class="carousel-captions caption-1">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="content">
-                                        <h1 data-animation="animated bounceInLeft">Welcome To</h1>
-                                        <h2 data-animation="animated zoomInDown"><span>AstroLifeGuide.com</span></h2>
-                                        <p data-animation="animated bounceInUp text-white">Your Trusted Source For Vedic Astrology Services</p>
-
-                                        <div class="clear"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>--}}
     <!-- hs Slider End -->
     <!-- hs service wrapper Start -->
     <div class="hs_service_main_wrapper" id="services">
@@ -104,7 +80,6 @@
                         <div class="hs_about_heading_wrapper" >
                             <h2 >Our Services</h2>
                             <h4><span>&nbsp;</span></h4>
-                            <p>Vedic astrology believes that the position of stars and planets during one's birth indicate the entire map of his or her life, accurate understanding of the horoscope helps to take the right path and achieve success.</p>
                         </div>
                     </div>
                 </div>

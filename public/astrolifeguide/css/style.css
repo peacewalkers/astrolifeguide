@@ -7771,3 +7771,9 @@ and (max-device-width : 1024px)
 .socialbar {
     background-color: #f05f1e;
 }
+
+@media (min-width: 992px) {
+    .view {
+        margin-bottom: -250px;
+    }
+}

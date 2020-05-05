@@ -166,7 +166,7 @@
 }
 @media (min-width: 992px) {
 	.view {
-		margin-bottom: -200px;
+		margin-bottom: -250px;
 	}
 }
 @media(min-width: 768px) and (max-width: 991px){

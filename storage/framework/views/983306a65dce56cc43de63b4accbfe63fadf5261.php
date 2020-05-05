@@ -21,16 +21,16 @@
                 <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-flag pr-2"></i> Horoscope<i class="pl-3 fas fa-angle-down rotate-icon"></i></a>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="/horoscope/new" class="waves-effect">Add New Report</a></li>
-                            <li><a href="/horoscope/all" class="waves-effect"> View All</a></li>
+                            <li><a href="#" class="waves-effect">Add New Report</a></li>
+                            <li><a href="/horoscopes" class="waves-effect"> View All</a></li>
                         </ul>
                     </div>
                 </li>
                 <li><a class="collapsible-header waves-effect arrow-r"><i class="fab fa-ring"></i> MatchMaker<i class="pl-3  fas fa-angle-down rotate-icon"></i></a>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="/matchmaker/new" class="waves-effect">Add New Report</a></li>
-                            <li><a href="/matchmaker/all" class="waves-effect"> View All</a></li>
+                            <li><a href="#" class="waves-effect">Add New Report</a></li>
+                            <li><a href="/matchmakers" class="waves-effect"> View All</a></li>
                         </ul>
                     </div>
                 </li>

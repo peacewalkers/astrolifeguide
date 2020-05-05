@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\RequestReceived;
+use App\Models\Horoscope;
 use App\Models\User;
 use App\Models\Auth;
 use Illuminate\Contracts\Session\Session;
@@ -147,10 +148,12 @@ class HoroscopeController extends Controller
                 $horoscope = auth()->user()->horoscopes()->where([
                     'orderID' => $neworderid,
                 ])->first();
-
              if($horoscope) {
 
                  $amount = $horoscope->amount;
+                 $name = $horoscope->name;
+                 $phone = $horoscope->phone;
+                 $email = $horoscope->email;
 
                  $api = new Api(config('app.razorpay'), config('app.razorsecret'));
 
@@ -177,9 +180,9 @@ class HoroscopeController extends Controller
                      "description" => "",
                      "image" => "",
                      "prefill" => [
-                         "name" => "",
-                         "email" => "",
-                         "contact" => "",
+                         "name" => $name,
+                         "email" => $email,
+                         "contact" => $phone,
                      ],
                      "notes" => [
                          "address" => "",
@@ -194,7 +197,6 @@ class HoroscopeController extends Controller
 
                  return view('pages.thankyou', ['pay' => $pay]);
              } else {
-
                  echo "Invalid order iD";
              }
                 //if completed

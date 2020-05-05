@@ -41,4 +41,6 @@
             $('#refdetails').hide();
         }
     }
+
+    $('.file-upload').file_upload();
 </script><?php /**PATH C:\laragon\www\astrolife\resources\views/scripts/datetime.blade.php ENDPATH**/ ?>

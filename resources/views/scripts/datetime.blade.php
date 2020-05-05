@@ -41,4 +41,6 @@
             $('#refdetails').hide();
         }
     }
+
+    $('.file-upload').file_upload();
 </script>

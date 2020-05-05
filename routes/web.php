@@ -31,9 +31,14 @@ Route::group(['middleware' => ['web', 'checkblocked']], function () {
     Route::get('refundpolicy', function () {return view('refund');});
     Route::get('termsandconditions', function () {return view('refund');});
 // route for make payment request using post method
+    Route::resource('image','ImageController');
 
 
-    Route::post('verify', 'RazorpayController@verify')->name('verify');
+    Route::post('/upload-images', 'ImageController@uploadImages');
+
+
+    Route::post('verifypay', 'RazorpayController@verifyWebhookSignature');
+    Route::get('getpay/{order_id}', 'RazorpayController@verifypay');
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -45,9 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::post('payment', 'RazorpayController@payment')->name('payment');
             Route::get('horoscopepay', 'HoroscopeController@horoscopepay')->name('horoscopepay');
             Route::get('matchmakerpay', 'MatchmakerController@matchmakerpay')->name('matchmakerpay');
-            Route::get('vastupay', 'VastuController@matchmakerpay')->name('vastupay');
-
-
+            Route::get('vastupay', 'VastuController@vastupay')->name('vastupay');
     });
 
 // Authentication Routes
@@ -165,6 +168,7 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
 
     Route::get('/horoscope/show', 'HoroscopeController@index');
     Route::get('/horoscope/{post}', 'HoroscopeController@show');
+    Route::get('/vastu/{post}', 'VastuController@show');
     Route::get('/horoscope/{post}/edit', 'HoroscopeController@edit');
     Route::delete('/horoscope/{post}', 'HoroscopeController@destroy');
     Route::get('/horoscopes', 'HoroscopeController@index');

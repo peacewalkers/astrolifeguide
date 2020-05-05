@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Vastu;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -121,6 +122,10 @@ class User extends Authenticatable
 
     public function matchmakers() {
         return $this->hasMany(Matchmaker::class);
+    }
+
+    public function vastus() {
+        return $this->hasMany(Vastu::class);
     }
 
     public function razorpay() {
